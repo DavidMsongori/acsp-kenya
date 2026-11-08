@@ -1,0 +1,571 @@
+
+/* ==========================================
+   WHERE WE WORK PAGE
+========================================== */
+
+.where-work-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.where-work-container {
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   PAGE HEADING
+========================================== */
+
+.where-work-heading {
+  padding: 42px 0 35px;
+  background: #032f5e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.where-work-eyebrow {
+  display: inline-block;
+  margin-bottom: 13px;
+  padding: 7px 16px;
+  border: 1px solid rgba(226, 205, 23, 0.5);
+  border-radius: 30px;
+  color: #e2cd17;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.where-work-heading h1 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(29px, 4vw, 43px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.where-work-heading h1 span {
+  color: #e2cd17;
+}
+
+.where-work-heading p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   MAP EXPLORER
+========================================== */
+
+.where-work-explorer {
+  padding: 35px 0 50px;
+  background: #f7f9fc;
+}
+
+.where-work-map-layout {
+  display: grid;
+  grid-template-columns: 1.35fr 0.85fr;
+  align-items: center;
+  gap: 28px;
+}
+
+/* MAP AREA */
+
+.where-work-map-area {
+  min-width: 0;
+  padding: 22px 20px;
+  background: #ffffff;
+  border: 1px solid #e7ebf1;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(3, 47, 94, 0.04);
+}
+
+.where-work-map-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.where-work-map-heading h2 {
+  margin: 0 0 5px;
+  color: #032f5e;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.where-work-map-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 12px;
+}
+
+.where-work-county-count {
+  flex-shrink: 0;
+  padding: 7px 11px;
+  background: rgba(226, 205, 23, 0.15);
+  color: #032f5e;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* MAP SIZE */
+
+/* Prevent the county map from being clipped at the top */
+.kenya-map-panel {
+  overflow: visible;
+  padding-top: 15px;
+}
+
+.kenya-county-map {
+  overflow: visible;
+  margin-top: 5px;
+}
+
+.where-work-map-area .kenya-map-wrapper {
+  max-width: 570px;
+}
+
+.where-work-map-area .kenya-map-panel {
+  height: 550px;
+}
+
+.where-work-map-legend {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 5px;
+  color: #718096;
+  font-size: 11px;
+}
+
+.legend-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e2cd17;
+  border: 1px solid #032f5e;
+}
+
+/* ==========================================
+   COUNTY DETAILS PANEL
+========================================== */
+
+.where-work-details {
+  min-height: 390px;
+  padding: 25px;
+  background: #ffffff;
+  border: 1px solid #e7ebf1;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(3, 47, 94, 0.04);
+}
+
+.where-work-details-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+}
+
+.where-work-details-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(226, 205, 23, 0.15);
+  color: #032f5e;
+  border-radius: 9px;
+}
+
+.where-work-details-top > span {
+  color: #a28f00;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.where-work-details > h2 {
+  margin: 0 0 9px;
+  color: #032f5e;
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.where-work-details-intro {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.where-work-activity-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 28px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e9edf2;
+  color: #032f5e;
+}
+
+.where-work-activity-heading h3 {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+/* EMPTY ACTIVITIES */
+
+.where-work-empty {
+  margin-top: 20px;
+  padding: 23px 16px;
+  text-align: center;
+  background: #f7f9fc;
+  border-radius: 9px;
+  color: #718096;
+}
+
+.where-work-empty > svg {
+  color: #b5a300;
+  margin-bottom: 10px;
+}
+
+.where-work-empty h4 {
+  margin: 0 0 8px;
+  color: #032f5e;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.where-work-empty p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+/* INITIAL EMPTY STATE */
+
+.where-work-empty-state {
+  min-height: 335px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.where-work-empty-icon {
+  width: 65px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(226, 205, 23, 0.15);
+  color: #032f5e;
+  border-radius: 50%;
+  margin-bottom: 17px;
+}
+
+.where-work-empty-state h2 {
+  margin: 0 0 10px;
+  color: #032f5e;
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.where-work-empty-state p {
+  max-width: 300px;
+  margin: 0 auto;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.where-work-select-hint {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 22px;
+  color: #a28f00;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+  .where-work-map-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .where-work-map-area .kenya-map-wrapper {
+    max-width: 500px;
+  }
+
+  .where-work-map-area .kenya-map-panel {
+    height: 500px;
+  }
+
+  .where-work-details {
+    min-height: 300px;
+  }
+
+  .where-work-empty-state {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .where-work-heading {
+    padding: 35px 0 30px;
+  }
+
+  .where-work-heading h1 {
+    font-size: 29px;
+  }
+
+  .where-work-heading p {
+    font-size: 12px;
+  }
+
+  .where-work-explorer {
+    padding: 22px 0 35px;
+  }
+
+  .where-work-map-area {
+    padding: 15px 10px;
+  }
+
+  .where-work-map-heading {
+    align-items: flex-start;
+  }
+
+  .where-work-map-heading h2 {
+    font-size: 16px;
+  }
+
+  .where-work-map-area .kenya-map-panel {
+    height: 390px;
+  }
+
+  .where-work-details {
+    padding: 19px;
+  }
+
+  .where-work-details > h2 {
+    font-size: 23px;
+  }
+}
+
+
+/* COUNTY ACTIVITIES */
+.where-work-activities-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.where-work-activity-card {
+  padding: 18px;
+  background: #ffffff;
+  border: 1px solid #e5ebe7;
+  border-radius: 12px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.where-work-activity-card:hover {
+  border-color: #145c3c;
+  box-shadow: 0 5px 16px rgba(20, 92, 60, 0.08);
+}
+
+.where-work-activity-label {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  background: #e8f4ed;
+  color: #145c3c;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.where-work-activity-card h4 {
+  margin: 12px 0 8px;
+  color: #183d2c;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.where-work-activity-card > p {
+  margin: 0;
+  color: #68766e;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.where-work-activity-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.where-work-activity-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64746a;
+  font-size: 12px;
+}
+
+.where-work-activity-programme {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 16px;
+  padding-top: 13px;
+  border-top: 1px solid #edf0ed;
+}
+
+.where-work-activity-programme span {
+  color: #87928b;
+  font-size: 11px;
+}
+
+.where-work-activity-programme strong {
+  color: #145c3c;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   VERIFIED COUNTY ASSOCIATION
+========================================== */
+
+.where-work-county-association {
+  margin: 22px 0;
+  padding: 18px;
+  background: #f7faf8;
+  border: 1px solid #e2ebe5;
+  border-radius: 12px;
+}
+
+.where-work-association-label {
+  display: block;
+  margin-bottom: 13px;
+  color: #64756b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.where-work-association-info {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+
+.where-work-association-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  padding: 5px;
+  background: #fff;
+  border: 1px solid #e5ebe7;
+  border-radius: 10px;
+}
+
+.where-work-association-info h4 {
+  margin: 0 0 4px;
+  color: #173d2c;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.where-work-association-info > div > span:not(.where-work-verification-status) {
+  display: block;
+  color: #68776e;
+  font-size: 12px;
+  margin-bottom: 7px;
+}
+
+.where-work-verification-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #16834b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.where-work-verified-dot {
+  width: 7px;
+  height: 7px;
+  background: #16834b;
+  border-radius: 50%;
+}
+
+.where-work-no-association {
+  margin: 0;
+  color: #68776e;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   COUNTY ACTIVITY PREVIEW
+========================================== */
+
+.where-work-activity-name {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.where-work-activity-name svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #16834b;
+}
+
+.where-work-activity-name h4 {
+  margin: 0;
+  color: #243b30;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.where-work-see-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 12px;
+  padding: 11px 16px;
+  background: #145c3c;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.where-work-see-more:hover {
+  background: #0d452d;
+  color: #fff;
+}

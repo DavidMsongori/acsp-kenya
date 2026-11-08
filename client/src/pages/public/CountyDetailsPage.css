@@ -1,0 +1,1020 @@
+
+/* ==========================================
+   ACSP-KENYA COUNTY DETAILS PAGE
+   Brand Colours
+========================================== */
+
+:root {
+  --acsp-blue: #032f5e;
+  --acsp-yellow: #e2cd17;
+  --acsp-white: #ffffff;
+  --acsp-light: #f5f8fc;
+  --acsp-text: #24364b;
+}
+
+/* ==========================================
+   GENERAL
+========================================== */
+
+.county-details-page {
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--acsp-white);
+}
+
+.county-details-container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   BACK NAVIGATION
+========================================== */
+
+.county-back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin: 25px 5%;
+  color: var(--acsp-blue);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.county-back-link:hover {
+  color: #b59f00;
+}
+
+/* ==========================================
+   COUNTY HERO
+========================================== */
+
+.county-details-hero {
+  position: relative;
+  width: 100%;
+  min-height: 680px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--acsp-blue);
+  color: var(--acsp-white);
+  isolation: isolate;
+}
+
+/* Background pattern */
+
+.county-details-hero .hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.08) 1px,
+      transparent 1px
+    );
+  background-size: 55px 55px;
+}
+
+/* Subtle right-side photograph */
+
+.county-details-hero .hero-background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(
+      90deg,
+      #032f5e 0%,
+      rgba(3, 47, 94, 0.75) 25%,
+      rgba(3, 47, 94, 0.48) 100%
+    ),
+    url("../../assets/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Hero container */
+
+.county-details-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 680px;
+  margin: 0 auto;
+  padding: 25px 25px 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   ISOLATED COUNTY MAP WATERMARK
+   Centred behind hero content
+========================================== */
+
+.county-details-hero-map {
+  position: absolute;
+  z-index: 0;
+  top: 46%;
+  left: 50%;
+  width: min(760px, 85%);
+  height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  opacity: 0.48;
+  pointer-events: none;
+}
+
+.county-details-hero-map .kenya-map-wrapper {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.county-details-hero-map .kenya-map-panel {
+  width: 100%;
+  height: 600px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.county-details-hero-map .kenya-county-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* County outline */
+
+.county-details-hero-map .kenya-county-shape {
+  fill: rgba(226, 205, 23, 0.035);
+  fill-opacity: 1;
+  stroke: var(--acsp-yellow);
+  stroke-width: 1.8;
+  stroke-opacity: 0.9;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  cursor: default;
+}
+
+/* ==========================================
+   HERO CONTENT
+   Always in front of the map
+========================================== */
+
+.county-details-hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1200px;
+  margin: -55px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* County profile eyebrow */
+
+.county-details-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: var(--acsp-yellow);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.2px;
+}
+
+/* County heading */
+
+.county-details-hero-content h1.hero-title {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  color: var(--acsp-white);
+  font-size: clamp(27px, 3vw, 41px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+
+.county-details-hero-content .hero-title-white {
+  color: var(--acsp-white);
+}
+
+.county-details-hero-content .hero-title-yellow {
+  color: var(--acsp-yellow);
+}
+
+/* Tagline */
+
+.county-details-hero-content .hero-tagline {
+  margin: 10px 0 0;
+  color: var(--acsp-yellow);
+  font-size: clamp(16px, 1.7vw, 21px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+/* Quote */
+
+.county-details-hero-content .hero-quote {
+  width: 100%;
+  max-width: 760px;
+  margin: 15px auto 0;
+  padding: 0 12px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 15px;
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.5;
+  text-align: center;
+  border: none;
+}
+
+.county-details-hero-content .hero-quote::before {
+  content: "“";
+  display: block;
+  margin-bottom: -8px;
+  color: var(--acsp-yellow);
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.county-details-hero-content .hero-quote::after {
+  display: none;
+  content: none;
+}
+
+/* ==========================================
+   HERO BUTTONS
+========================================== */
+
+.county-details-hero-content .hero-actions {
+  width: 100%;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.county-details-hero-content .hero-btn {
+  min-height: 34px;
+  padding: 7px 13px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.county-details-hero-content .hero-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Primary */
+
+.county-details-hero-content .hero-btn-primary {
+  color: var(--acsp-blue);
+  background: var(--acsp-yellow);
+  border: 1px solid var(--acsp-yellow);
+}
+
+.county-details-hero-content .hero-btn-primary:hover {
+  color: var(--acsp-blue);
+  background: var(--acsp-white);
+  border-color: var(--acsp-white);
+}
+
+/* Outline */
+
+.county-details-hero-content .hero-btn-outline {
+  color: var(--acsp-white);
+  background: transparent;
+  border: 1px solid var(--acsp-white);
+}
+
+.county-details-hero-content .hero-btn-outline:hover {
+  color: var(--acsp-blue);
+  background: var(--acsp-white);
+  border-color: var(--acsp-white);
+}
+
+/* ==========================================
+   COUNTY IMPACT INDICATORS
+========================================== */
+
+.county-details-hero-content .hero-impact {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto 0;
+  padding-top: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  gap: 8px;
+  border-top: none;
+}
+
+.county-details-hero-content .impact-item {
+  min-height: 52px;
+  padding: 3px 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+}
+
+.county-details-hero-content .impact-item strong {
+  display: block;
+  color: var(--acsp-yellow);
+  font-size: clamp(24px, 2.2vw, 30px);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.county-details-hero-content .impact-item span {
+  display: block;
+  margin-top: 3px;
+  color: var(--acsp-white);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Bottom yellow accent */
+
+.county-details-hero .hero-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 4;
+  width: 100%;
+  height: 4px;
+  background: var(--acsp-yellow);
+}
+
+/* ==========================================
+   SECTION HEADINGS
+========================================== */
+
+.county-section-heading {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 35px;
+  text-align: center;
+}
+
+.county-section-heading > span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: var(--acsp-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.county-section-heading h2 {
+  margin: 0;
+  color: var(--acsp-blue);
+  font-size: clamp(25px, 3vw, 36px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.county-section-heading p {
+  margin: 14px auto 0;
+  color: var(--acsp-text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   VERIFIED COUNTY ASSOCIATION
+========================================== */
+
+.county-association-section {
+  width: 100%;
+  padding: 80px 25px;
+  background: var(--acsp-white);
+}
+
+.county-association-profile {
+  width: 100%;
+  max-width: 850px;
+  min-height: 170px;
+  margin: 0 auto;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  background: var(--acsp-light);
+  border: 1px solid #e5ebf2;
+  border-left: 5px solid var(--acsp-yellow);
+  border-radius: 7px;
+}
+
+.county-association-profile-logo {
+  width: 105px;
+  height: 105px;
+  flex-shrink: 0;
+  padding: 8px;
+  object-fit: contain;
+  background: var(--acsp-white);
+  border: 1px solid #e5ebf2;
+  border-radius: 7px;
+}
+
+.county-association-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.county-association-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+  color: #16834b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.county-association-profile-info h3 {
+  margin: 0;
+  color: var(--acsp-blue);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.county-association-profile-info p {
+  margin: 5px 0 10px;
+  color: var(--acsp-text);
+  font-size: 14px;
+}
+
+.county-association-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 10px;
+  color: var(--acsp-text);
+  font-size: 13px;
+}
+
+.county-association-location svg {
+  color: var(--acsp-blue);
+}
+
+/* No verified association */
+
+.county-association-unavailable {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 28px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  background: var(--acsp-light);
+  border: 1px solid #e5ebf2;
+  border-left: 5px solid var(--acsp-yellow);
+  border-radius: 7px;
+}
+
+.county-association-unavailable > svg {
+  flex-shrink: 0;
+  color: var(--acsp-blue);
+}
+
+.county-association-unavailable h3 {
+  margin: 0 0 8px;
+  color: var(--acsp-blue);
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.county-association-unavailable p {
+  margin: 0;
+  color: var(--acsp-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   COUNTY ACTIVITIES
+========================================== */
+
+.county-activities-section {
+  width: 100%;
+  padding: 80px 30px 95px;
+  background: var(--acsp-light);
+}
+
+.county-activities-grid {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+}
+
+/* Activity card */
+
+.county-details-activity-card {
+  min-width: 0;
+  overflow: hidden;
+  background: var(--acsp-white);
+  border: 1px solid #e5ebf2;
+  border-bottom: 4px solid var(--acsp-yellow);
+  border-radius: 7px;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.county-details-activity-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(3, 47, 94, 0.09);
+}
+
+.county-details-activity-content {
+  padding: 28px;
+}
+
+.county-details-activity-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #8b7900;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.3px;
+}
+
+.county-details-activity-content h3 {
+  margin: 0 0 12px;
+  color: var(--acsp-blue);
+  font-size: 21px;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.county-details-activity-description {
+  margin: 0 0 20px;
+  color: var(--acsp-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   ACTIVITY GALLERY
+========================================== */
+
+.county-details-gallery {
+  margin-top: 22px;
+}
+
+.county-details-gallery-heading {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 13px;
+  color: var(--acsp-blue);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.county-details-gallery-heading svg {
+  color: #b59f00;
+}
+
+.county-details-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.county-details-gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 155px;
+  overflow: hidden;
+  background: #e8edf3;
+  border-radius: 5px;
+}
+
+.county-details-gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.county-details-gallery-item:hover img {
+  transform: scale(1.06);
+}
+
+/* ==========================================
+   ACTIVITY META
+========================================== */
+
+.county-details-activity-meta {
+  margin-top: 22px;
+  padding-top: 17px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 22px;
+  border-top: 1px solid #e8edf3;
+}
+
+.county-details-activity-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--acsp-text);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.county-details-activity-meta svg {
+  flex-shrink: 0;
+  color: var(--acsp-blue);
+}
+
+/* Programme label */
+
+.county-details-programme {
+  margin-top: 18px;
+  padding: 13px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: #f5f8fc;
+  border-left: 3px solid var(--acsp-yellow);
+  border-radius: 3px;
+}
+
+.county-details-programme span {
+  color: #69798a;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.county-details-programme strong {
+  color: var(--acsp-blue);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ==========================================
+   EMPTY ACTIVITIES STATE
+========================================== */
+
+.county-details-no-activities {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 50px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: var(--acsp-white);
+  border: 1px solid #e5ebf2;
+  border-bottom: 4px solid var(--acsp-yellow);
+  border-radius: 7px;
+}
+
+.county-details-no-activities > svg {
+  margin-bottom: 15px;
+  color: var(--acsp-blue);
+}
+
+.county-details-no-activities h3 {
+  margin: 0 0 10px;
+  color: var(--acsp-blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.county-details-no-activities p {
+  max-width: 450px;
+  margin: 0;
+  color: var(--acsp-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   LOADING AND ERROR STATES
+========================================== */
+
+.county-details-loading,
+.county-details-error {
+  width: 90%;
+  max-width: 750px;
+  margin: 50px auto;
+  padding: 35px 25px;
+  text-align: center;
+  background: var(--acsp-light);
+  border: 1px solid #e5ebf2;
+  border-radius: 7px;
+  color: var(--acsp-blue);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.county-details-error {
+  color: #b42318;
+  border-left: 4px solid #b42318;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+  .county-details-hero,
+  .county-details-hero-container {
+    min-height: 650px;
+  }
+
+  .county-details-hero-content {
+    margin-top: -40px;
+  }
+
+  .county-details-hero-content h1.hero-title {
+    font-size: clamp(27px, 3.5vw, 36px);
+  }
+
+  .county-details-hero-map {
+    width: 100%;
+    height: 600px;
+    opacity: 0.28;
+  }
+
+  .county-details-hero-map .kenya-map-panel {
+    height: 580px;
+  }
+
+  .county-activities-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .county-back-link {
+    margin: 20px 18px;
+  }
+
+  .county-details-hero,
+  .county-details-hero-container {
+    min-height: auto;
+  }
+
+  .county-details-hero-container {
+    padding: 45px 17px 45px;
+  }
+
+  .county-details-hero-content {
+    margin-top: -15px;
+  }
+
+  .county-details-eyebrow {
+    margin-bottom: 12px;
+    font-size: 10px;
+    letter-spacing: 1.6px;
+  }
+
+  .county-details-hero-content h1.hero-title {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .county-details-hero-content .hero-tagline {
+    margin-top: 9px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .county-details-hero-content .hero-quote {
+    margin-top: 14px;
+    padding: 0 3px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .county-details-hero-content .hero-quote::before {
+    font-size: 27px;
+  }
+
+  .county-details-hero-content .hero-actions {
+    margin-top: 14px;
+    gap: 8px;
+    flex-direction: column;
+  }
+
+  .county-details-hero-content .hero-btn {
+    width: 100%;
+    max-width: 235px;
+    min-height: 32px;
+    padding: 7px 11px;
+    font-size: 10px;
+  }
+
+  .county-details-hero-content .hero-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .county-details-hero-content .hero-impact {
+    margin-top: 18px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 10px;
+  }
+
+  .county-details-hero-content .impact-item {
+    min-height: 48px;
+    padding: 2px;
+  }
+
+  .county-details-hero-content .impact-item strong {
+    font-size: 25px;
+  }
+
+  .county-details-hero-content .impact-item span {
+    font-size: 10px;
+  }
+
+  .county-details-hero-map {
+    top: 47%;
+    width: 130%;
+    height: 520px;
+    opacity: 0.20;
+  }
+
+  .county-details-hero-map .kenya-map-panel {
+    height: 500px;
+  }
+
+  .county-details-hero .hero-background-image {
+    width: 100%;
+    opacity: 0.05;
+  }
+
+  /* Association */
+
+  .county-association-section {
+    padding: 60px 20px;
+  }
+
+  .county-association-profile {
+    padding: 22px;
+    gap: 17px;
+  }
+
+  .county-association-profile-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .county-association-profile-info h3 {
+    font-size: 17px;
+  }
+
+  .county-association-unavailable {
+    padding: 22px;
+    gap: 13px;
+  }
+
+  /* Activities */
+
+  .county-activities-section {
+    padding: 60px 18px 70px;
+  }
+
+  .county-section-heading {
+    margin-bottom: 25px;
+  }
+
+  .county-section-heading h2 {
+    font-size: 26px;
+  }
+
+  .county-section-heading p {
+    font-size: 14px;
+  }
+
+  .county-activities-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .county-details-activity-content {
+    padding: 22px;
+  }
+
+  .county-details-activity-content h3 {
+    font-size: 19px;
+  }
+
+  .county-details-gallery-item {
+    height: 135px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 380px) {
+  .county-details-hero-content h1.hero-title {
+    font-size: 23px;
+  }
+
+  .county-details-hero-content .hero-tagline {
+    font-size: 15px;
+  }
+
+  .county-details-hero-content .hero-quote {
+    font-size: 12px;
+  }
+
+  .county-details-hero-content .impact-item strong {
+    font-size: 23px;
+  }
+
+  .county-association-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .county-details-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .county-details-gallery-item {
+    height: 175px;
+  }
+}

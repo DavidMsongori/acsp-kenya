@@ -1,0 +1,232 @@
+
+/* ==========================================
+   ACSP-KENYA PUBLIC FOOTER
+========================================== */
+
+
+.public-footer {
+  width: 100%;
+  margin-top: 0 !important;
+  padding-top: 0;
+  background: #032f5e;
+  color: #ffffff;
+}
+
+
+/* Main Footer */
+
+.public-footer-main {
+  padding: 65px 5% 55px;
+}
+
+.public-footer-container {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+  gap: 45px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Footer Brand */
+
+.public-footer-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.public-footer-brand-mark {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 4px solid #e2cd17;
+  border-radius: 5px;
+  background: #ffffff;
+  color: #032f5e;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.public-footer-brand div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.public-footer-brand strong {
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.public-footer-brand span {
+  color: #c3d2e2;
+  font-size: 9px;
+}
+
+.public-footer-about > p {
+  max-width: 370px;
+  margin: 0 0 22px;
+  color: #c5d2e1;
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+/* Social Links */
+
+.public-footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.public-footer-socials a {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.public-footer-socials a:hover {
+  border-color: #e2cd17;
+  background: #e2cd17;
+  color: #032f5e;
+}
+
+/* Footer Columns */
+
+.public-footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.public-footer-column h3 {
+  margin: 0 0 8px;
+  padding-bottom: 12px;
+  position: relative;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.public-footer-column h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 35px;
+  height: 3px;
+  border-radius: 5px;
+  background: #e2cd17;
+}
+
+.public-footer-column > a {
+  color: #c5d2e1;
+  font-size: 12px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.public-footer-column > a:hover {
+  color: #e2cd17;
+}
+
+/* Contact */
+
+.public-footer-contact > div,
+.public-footer-contact > a {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #c5d2e1;
+  font-size: 12px;
+  line-height: 1.7;
+  text-decoration: none;
+}
+
+.public-footer-contact svg {
+  flex-shrink: 0;
+  color: #e2cd17;
+}
+
+.public-footer-contact a:hover {
+  color: #e2cd17;
+}
+
+/* Bottom Footer */
+
+.public-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  background: #022748;
+}
+
+.public-footer-bottom-container {
+  max-width: 1440px;
+  min-height: 65px;
+  margin: 0 auto;
+  padding: 15px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.public-footer-bottom p {
+  margin: 0;
+  color: #aebfd1;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+
+@media (max-width: 1000px) {
+  .public-footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .public-footer-main {
+    padding: 45px 22px;
+  }
+
+  .public-footer-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 35px 20px;
+  }
+
+  .public-footer-about {
+    grid-column: 1 / -1;
+  }
+
+  .public-footer-bottom-container {
+    padding: 18px 22px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 380px) {
+  .public-footer-container {
+    grid-template-columns: 1fr;
+  }
+
+  .public-footer-about {
+    grid-column: auto;
+  }
+}

@@ -1,0 +1,508 @@
+
+/* =========================================
+   MISSION & VISION PAGE
+========================================= */
+
+.mission-vision-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #263445;
+}
+
+.mv-container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.mv-hero {
+  padding: 65px 0;
+  background: #032f5e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.mv-hero-content {
+  max-width: 900px;
+}
+
+.mv-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 19px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(226, 205, 23, 0.65);
+  border-radius: 5px;
+  background: rgba(226, 205, 23, 0.12);
+  color: #e2cd17;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.mv-hero h1 {
+  margin: 0 0 17px;
+  color: #ffffff;
+  font-size: clamp(34px, 4.2vw, 49px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.mv-hero h1 span {
+  color: #e2cd17;
+}
+
+.mv-hero p {
+  max-width: 760px;
+  margin: 0 auto 25px;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.mv-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 23px;
+  border-radius: 5px;
+  background: #e2cd17;
+  color: #032f5e;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 750;
+  transition: all 0.25s ease;
+}
+
+.mv-hero-button:hover {
+  background: #ffffff;
+  color: #032f5e;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   VISION AND MISSION
+========================================= */
+
+.mv-statements {
+  padding: 48px 0;
+  background: #ffffff;
+}
+
+.mv-section-heading {
+  max-width: 800px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.mv-section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 17px;
+  border: 1px solid rgba(226, 205, 23, 0.6);
+  border-radius: 5px;
+  background: rgba(226, 205, 23, 0.1);
+  color: #032f5e;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.mv-statements-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.mv-statement-card {
+  padding: 28px 27px;
+  border: 1px solid #e5eaf0;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0 5px 18px rgba(3, 47, 94, 0.05);
+}
+
+.mv-statement-card:first-child {
+  border-top: 4px solid #032f5e;
+}
+
+.mv-statement-card:last-child {
+  border-top: 4px solid #e2cd17;
+}
+
+.mv-statement-icon {
+  width: 49px;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: rgba(226, 205, 23, 0.17);
+  color: #032f5e;
+}
+
+.mv-statement-card h2 {
+  margin: 0;
+  color: #032f5e;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.mv-accent-line {
+  width: 43px;
+  height: 4px;
+  margin: 12px 0 15px;
+  border-radius: 5px;
+  background: #e2cd17;
+}
+
+.mv-statement-card p {
+  margin: 0;
+  color: #586779;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   OUR MOTTO
+========================================== */
+
+.mv-motto {
+  background: #032f5e;
+  padding: 48px 20px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.mv-motto-label {
+  display: inline-block;
+  color: #e2cd17;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  margin-bottom: 16px;
+}
+
+.mv-motto h2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 5px 14px;
+  margin: 0;
+  font-size: clamp(30px, 4.5vw, 46px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.mv-motto h2 .motto-white,
+.mv-motto h2 .motto-yellow {
+  display: inline;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+}
+
+.mv-motto h2 .motto-white {
+  color: #ffffff;
+}
+
+.mv-motto h2 .motto-yellow {
+  color: #e2cd17;
+}
+
+@media (max-width: 600px) {
+  .mv-motto {
+    padding: 38px 16px;
+  }
+
+  .mv-motto h2 {
+    flex-direction: column;
+    gap: 5px;
+    font-size: 29px;
+  }
+}
+
+
+
+/* ==========================================
+   OUR PILLARS - COMPACT ORIGINAL GRID
+========================================== */
+
+.mv-pillars {
+  padding: 45px 0;
+  background: #f7f9fc;
+}
+
+.mv-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.mv-pillar-card {
+  padding: 17px 18px;
+  background: #ffffff;
+  border: 1px solid #e5eaf1;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(3, 47, 94, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mv-pillar-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(3, 47, 94, 0.08);
+}
+
+.mv-pillar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 9px;
+}
+
+.mv-pillar-icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(226, 205, 23, 0.12);
+  color: #032f5e;
+  border-radius: 8px;
+}
+
+.mv-pillar-acronym {
+  font-size: 22px;
+  font-weight: 800;
+  color: #e2cd17;
+}
+
+.mv-pillar-card h3 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 750;
+  color: #032f5e;
+}
+
+.mv-pillar-highlight {
+  color: #e2cd17;
+}
+
+.mv-pillar-card p {
+  margin: 0;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: #64748b;
+}
+
+.mv-acronym-note {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.8;
+  color: #64748b;
+}
+
+.mv-acronym-note span {
+  color: #032f5e;
+  font-weight: 800;
+}
+
+@media (max-width: 900px) {
+  .mv-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .mv-pillars {
+    padding: 35px 0;
+  }
+
+  .mv-pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+
+  .mv-pillar-card {
+    padding: 14px;
+  }
+
+  .mv-pillar-card h3 {
+    font-size: 14px;
+  }
+
+  .mv-pillar-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  .mv-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 900px) {
+  .mv-hero {
+    padding: 55px 0;
+  }
+
+  .mv-pillars-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .mv-statements-grid {
+    gap: 16px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .mv-container {
+    width: 90%;
+  }
+
+  .mv-hero {
+    padding: 45px 0;
+  }
+
+  .mv-eyebrow {
+    margin-bottom: 15px;
+    padding: 7px 14px;
+    font-size: 10px;
+  }
+
+  .mv-hero h1 {
+    font-size: 30px;
+  }
+
+  .mv-hero p {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  .mv-hero-button {
+    padding: 11px 18px;
+    font-size: 13px;
+  }
+
+  .mv-statements {
+    padding: 36px 0;
+  }
+
+  .mv-section-heading {
+    margin-bottom: 21px;
+  }
+
+  .mv-statements-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .mv-statement-card {
+    padding: 22px 20px;
+  }
+
+  .mv-statement-card h2 {
+    font-size: 20px;
+  }
+
+  .mv-statement-card p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .mv-motto {
+    padding: 28px 0;
+  }
+
+  .mv-motto h2 {
+    font-size: 24px;
+  }
+
+  .mv-pillars {
+    padding: 38px 0;
+  }
+
+  .mv-pillars .mv-section-heading h2 {
+    font-size: 26px;
+  }
+
+  .mv-pillars .mv-section-heading p {
+    font-size: 13px;
+  }
+
+  .mv-pillars-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .mv-pillar-card {
+    padding: 17px 13px;
+  }
+
+  .mv-pillar-icon {
+    width: 39px;
+    height: 39px;
+  }
+
+  .mv-pillar-acronym {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+
+  .mv-pillar-card h3 {
+    font-size: 15px;
+  }
+
+  .mv-pillar-card p {
+    font-size: 12px;
+    line-height: 1.65;
+  }
+
+  .mv-acronym-note {
+    margin-top: 19px;
+    padding: 13px;
+    font-size: 11px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+  .mv-pillars-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mv-hero h1 {
+    font-size: 27px;
+  }
+
+  .mv-motto h2 {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,89 @@
+
+/* ==========================================
+   ACSP-KENYA PRESIDENT DASHBOARD LAYOUT
+========================================== */
+
+.president-dashboard-layout {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #f4f7fb;
+  color: #263445;
+  box-sizing: border-box;
+}
+
+.president-dashboard-main {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.president-dashboard-content {
+  flex: 1;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+  margin: 0;
+  padding: 24px 20px;
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   LARGE SCREENS
+========================================== */
+
+@media (min-width: 1440px) {
+  .president-dashboard-content {
+    padding: 28px 24px;
+  }
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width: 1024px) {
+  .president-dashboard-content {
+    padding: 22px 18px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .president-dashboard-layout {
+    display: block;
+    width: 100%;
+  }
+
+  .president-dashboard-main {
+    width: 100%;
+    min-height: 100vh;
+  }
+
+  .president-dashboard-content {
+    width: 100%;
+    padding: 18px 14px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width: 480px) {
+  .president-dashboard-content {
+    padding: 15px 10px;
+  }
+}

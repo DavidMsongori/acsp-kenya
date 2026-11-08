@@ -1,0 +1,266 @@
+
+/* ==========================================
+   FOCUS AREAS PAGE
+========================================== */
+
+.focus-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+}
+
+.focus-container {
+  width: 92%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.focus-hero {
+  position: relative;
+  width: 100%;
+  padding: 65px 0;
+  background: #032f5e;
+  color: #ffffff;
+}
+
+.focus-hero-content {
+  max-width: 760px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.focus-eyebrow {
+  display: inline-block;
+  padding: 7px 17px;
+  border: 1px solid rgba(226, 205, 23, 0.5);
+  border-radius: 30px;
+  color: #e2cd17;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  margin-bottom: 17px;
+}
+
+.focus-hero h1 {
+  margin: 0 0 15px;
+  color: #ffffff;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.focus-hero h1 span {
+  color: #e2cd17;
+}
+
+.focus-hero p {
+  max-width: 690px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.focus-hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 25px;
+  padding: 12px 23px;
+  background: #e2cd17;
+  color: #032f5e;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 750;
+  transition: all 0.25s ease;
+}
+
+.focus-hero-button:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   SECTION HEADING
+========================================== */
+
+.focus-goals {
+  padding: 50px 0;
+  background: #f7f9fc;
+}
+
+.focus-section-heading {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.focus-section-label {
+  display: inline-block;
+  color: #b5a300;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.focus-section-heading h2 {
+  margin: 0 0 12px;
+  color: #032f5e;
+  font-size: clamp(26px, 3.5vw, 34px);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.focus-section-heading h2 span {
+  color: #c5ae00;
+}
+
+.focus-section-heading p {
+  max-width: 650px;
+  margin: 0 auto;
+  color: #64748b;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ==========================================
+   FOCUS GOALS GRID
+========================================== */
+
+.focus-goals-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin-top: 30px;
+}
+
+.focus-goal-card {
+  position: relative;
+  padding: 20px 19px;
+  background: #ffffff;
+  border: 1px solid #e5eaf1;
+  border-radius: 9px;
+  box-shadow: 0 3px 12px rgba(3, 47, 94, 0.04);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.focus-goal-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 18px rgba(3, 47, 94, 0.09);
+}
+
+.focus-goal-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.focus-goal-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #032f5e;
+  background: rgba(226, 205, 23, 0.15);
+  border-radius: 8px;
+}
+
+.focus-goal-number {
+  color: #d9dfe8;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.focus-goal-card h3 {
+  margin: 0 0 9px;
+  color: #032f5e;
+  font-size: 16px;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.focus-goal-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12.5px;
+  line-height: 1.7;
+}
+
+.focus-goal-line {
+  width: 35px;
+  height: 3px;
+  margin-top: 16px;
+  background: #e2cd17;
+  border-radius: 5px;
+}
+
+/* ==========================================
+   RESPONSIVE DESIGN
+========================================== */
+
+@media (max-width: 900px) {
+  .focus-goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .focus-hero {
+    padding: 48px 0;
+  }
+
+  .focus-hero h1 {
+    font-size: 34px;
+  }
+
+  .focus-hero p {
+    font-size: 13px;
+  }
+
+  .focus-goals {
+    padding: 38px 0;
+  }
+
+  .focus-goals-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+    margin-top: 23px;
+  }
+
+  .focus-goal-card {
+    padding: 15px 13px;
+  }
+
+  .focus-goal-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .focus-goal-number {
+    font-size: 19px;
+  }
+
+  .focus-goal-card h3 {
+    font-size: 14px;
+  }
+
+  .focus-goal-card p {
+    font-size: 11.5px;
+  }
+}
+
+@media (max-width: 380px) {
+  .focus-goals-grid {
+    grid-template-columns: 1fr;
+  }
+}

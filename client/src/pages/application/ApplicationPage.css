@@ -1,0 +1,268 @@
+
+.application-page {
+  min-height: 100vh;
+  padding: 45px 20px 70px;
+  background: #f3f6fb;
+  font-family: Inter, Arial, sans-serif;
+}
+
+.application-container {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.application-header {
+  margin-bottom: 30px;
+}
+
+.application-back {
+  display: inline-block;
+  margin-bottom: 25px;
+  color: #174f89;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.application-back:hover {
+  text-decoration: underline;
+}
+
+.application-header h1 {
+  margin: 0 0 10px;
+  color: #102b50;
+  font-size: 30px;
+  font-weight: 750;
+}
+
+.application-header > p {
+  max-width: 650px;
+  margin: 0;
+  color: #68778b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.application-section {
+  padding: 30px;
+  background: #ffffff;
+  border: 1px solid #e7ebf2;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(15, 35, 65, 0.04);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 27px;
+}
+
+.section-heading > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #eaf1fa;
+  color: #174f89;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.section-heading h2 {
+  margin: 0 0 6px;
+  color: #102b50;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #7a8798;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.application-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.application-field {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+}
+
+.application-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.application-field label {
+  color: #263b55;
+  font-size: 14px;
+  font-weight: 650;
+}
+
+.application-field input,
+.application-field select {
+  width: 100%;
+  box-sizing: border-box;
+  min-height: 46px;
+  padding: 12px 14px;
+  border: 1px solid #dce3ed;
+  border-radius: 9px;
+  outline: none;
+  background: #ffffff;
+  color: #172b45;
+  font-family: inherit;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.application-field input::placeholder {
+  color: #a0aaba;
+}
+
+.application-field input:focus,
+.application-field select:focus {
+  border-color: #2463a6;
+  box-shadow: 0 0 0 3px rgba(36, 99, 166, 0.12);
+}
+
+.application-field input[type="file"] {
+  padding: 10px;
+  background: #f9fbfe;
+  cursor: pointer;
+}
+
+.application-field small {
+  color: #7a8798;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.selected-file {
+  margin: 0;
+  color: #18794e;
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.application-declaration {
+  padding: 20px 22px;
+  border: 1px solid #dce7f4;
+  border-radius: 10px;
+  background: #edf4fc;
+}
+
+.application-declaration p {
+  margin: 0;
+  color: #425873;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.application-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 14px;
+}
+
+.cancel-button,
+.application-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 24px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.cancel-button {
+  border: 1px solid #dce3ed;
+  background: #ffffff;
+  color: #425873;
+}
+
+.cancel-button:hover {
+  background: #f3f6fb;
+}
+
+.application-actions button {
+  border: none;
+  background: #123d70;
+  color: #ffffff;
+}
+
+.application-actions button:hover {
+  background: #0c2d54;
+}
+
+.application-actions button:active,
+.cancel-button:active {
+  transform: translateY(1px);
+}
+
+.application-actions button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+@media (max-width: 650px) {
+  .application-page {
+    padding: 25px 14px 45px;
+  }
+
+  .application-header h1 {
+    font-size: 25px;
+  }
+
+  .application-section {
+    padding: 23px 18px;
+  }
+
+  .application-grid {
+    grid-template-columns: 1fr;
+    gap: 19px;
+  }
+
+  .application-field.full-width {
+    grid-column: auto;
+  }
+
+  .section-heading h2 {
+    font-size: 16px;
+  }
+
+  .application-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .cancel-button,
+  .application-actions button {
+    width: 100%;
+    box-sizing: border-box;
+  }
+}

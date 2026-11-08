@@ -1,0 +1,661 @@
+
+/* ==========================================
+   ACSP-KENYA PRESIDENT DASHBOARD
+   DashboardPage.css
+========================================== */
+
+.dashboard-content {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 4px 0 32px;
+  color: #172b3a;
+}
+
+/* ==========================================
+   WELCOME BANNER
+========================================== */
+
+.welcome-banner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  min-height: 210px;
+  padding: 38px 44px;
+  margin-bottom: 28px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: linear-gradient(115deg, #032f5e 0%, #06477e 100%);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(3, 47, 94, 0.12);
+}
+
+.welcome-banner::before,
+.welcome-banner::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.welcome-banner::before {
+  width: 300px;
+  height: 300px;
+  right: 90px;
+  top: -190px;
+}
+
+.welcome-banner::after {
+  width: 220px;
+  height: 220px;
+  right: -60px;
+  bottom: -150px;
+}
+
+.welcome-banner > div:first-child {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.welcome-eyebrow {
+  display: inline-block;
+  margin-bottom: 15px;
+  color: #e2cd17;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  line-height: 1.5;
+}
+
+.welcome-banner h2 {
+  margin: 0 0 12px;
+  color: #ffffff;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 750;
+  line-height: 1.2;
+}
+
+.welcome-banner p {
+  max-width: 650px;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.86);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.welcome-icon {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 125px;
+  height: 125px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2cd17;
+}
+
+/* ==========================================
+   DASHBOARD OVERVIEW
+========================================== */
+
+.dashboard-overview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.overview-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  min-height: 115px;
+  padding: 23px;
+  border: 1px solid #e9eef3;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(16, 42, 67, 0.035);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-3px);
+  border-color: #d5e1ec;
+  box-shadow: 0 8px 20px rgba(16, 42, 67, 0.07);
+}
+
+.overview-card-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+}
+
+.overview-card-icon.blue {
+  background: #eaf2fb;
+  color: #032f5e;
+}
+
+.overview-card-icon.orange {
+  background: #fff3e5;
+  color: #d97706;
+}
+
+.overview-card-icon.green {
+  background: #e8f5ee;
+  color: #16834a;
+}
+
+.overview-card > div:last-child {
+  min-width: 0;
+}
+
+.overview-card span {
+  display: block;
+  margin-bottom: 7px;
+  color: #718096;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.overview-card h3 {
+  margin: 0 0 5px;
+  overflow-wrap: anywhere;
+  color: #032f5e;
+  font-size: 19px;
+  font-weight: 750;
+  line-height: 1.3;
+}
+
+.overview-card small {
+  display: block;
+  color: #8a97a6;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   SHARED SECTION STYLING
+========================================== */
+
+.application-section,
+.account-section {
+  margin-bottom: 28px;
+  padding: 28px;
+  border: 1px solid #e9eef3;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(16, 42, 67, 0.035);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.section-heading h2 {
+  margin: 0 0 7px;
+  color: #032f5e;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.section-heading p {
+  margin: 0;
+  color: #7a8795;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   STATUS BADGES
+========================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-height: 29px;
+  padding: 6px 13px;
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.status-badge.approved {
+  background: #e8f6ed;
+  color: #16834a;
+}
+
+.status-badge.pending {
+  background: #fff4df;
+  color: #a96b08;
+}
+
+.status-badge.rejected {
+  background: #fdeaea;
+  color: #c43131;
+}
+
+/* ==========================================
+   APPLICATION DETAILS
+========================================== */
+
+.application-details {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.application-detail-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+  min-width: 0;
+  min-height: 85px;
+  padding: 17px 19px;
+  border: 1px solid #edf1f5;
+  border-radius: 10px;
+  background: #fbfcfe;
+}
+
+.application-detail-card span {
+  color: #7a8795;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.application-detail-card strong {
+  overflow-wrap: anywhere;
+  color: #25384a;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.application-status-text.approved {
+  color: #16834a;
+}
+
+.application-status-text.pending {
+  color: #b77912;
+}
+
+.application-status-text.rejected {
+  color: #c43131;
+}
+
+/* ==========================================
+   APPLICATION REVIEW NOTES
+========================================== */
+
+.application-review-notes {
+  grid-column: 1 / -1;
+  padding: 20px;
+  border: 1px solid #dce8f3;
+  border-left: 4px solid #032f5e;
+  border-radius: 9px;
+  background: #f5f9fd;
+}
+
+.application-review-notes h3 {
+  margin: 0 0 9px;
+  color: #032f5e;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.application-review-notes p {
+  margin: 0;
+  color: #526477;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   APPLICATION INFORMATION MESSAGES
+========================================== */
+
+.application-information {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 16px 18px;
+  border-left: 4px solid #e2cd17;
+  border-radius: 7px;
+  background: #fffbea;
+  color: #6d5b13;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   EMPTY STATES
+========================================== */
+
+.application-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  padding: 35px 20px;
+  text-align: center;
+}
+
+.application-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 68px;
+  height: 68px;
+  margin-bottom: 18px;
+  border-radius: 18px;
+  background: #edf4fb;
+  color: #032f5e;
+}
+
+.application-empty-state h3 {
+  margin: 0 0 10px;
+  color: #032f5e;
+  font-size: 17px;
+  font-weight: 750;
+}
+
+.application-empty-state p {
+  max-width: 500px;
+  margin: 0 0 22px;
+  color: #7a8795;
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   APPLICATION BUTTON
+========================================== */
+
+.application-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 45px;
+  padding: 0 21px;
+  border: none;
+  border-radius: 8px;
+  background: #032f5e;
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.application-button:hover {
+  transform: translateY(-2px);
+  background: #06477e;
+  box-shadow: 0 5px 13px rgba(3, 47, 94, 0.18);
+}
+
+.application-button:active {
+  transform: translateY(0);
+}
+
+.application-button:focus-visible {
+  outline: 3px solid rgba(226, 205, 23, 0.65);
+  outline-offset: 3px;
+}
+
+/* ==========================================
+   ACCOUNT INFORMATION
+========================================== */
+
+.account-information {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 28px;
+}
+
+.account-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  padding: 18px 4px;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.account-detail:nth-last-child(-n + 2) {
+  border-bottom: none;
+}
+
+.account-detail span {
+  color: #8491a0;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.account-detail strong {
+  overflow-wrap: anywhere;
+  color: #25384a;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+/* ==========================================
+   TABLET RESPONSIVENESS
+========================================== */
+
+@media (max-width: 1024px) {
+  .dashboard-overview {
+    gap: 14px;
+  }
+
+  .overview-card {
+    gap: 12px;
+    padding: 18px;
+  }
+
+  .overview-card h3 {
+    font-size: 17px;
+  }
+
+  .welcome-banner {
+    padding: 32px;
+  }
+
+  .application-section,
+  .account-section {
+    padding: 24px;
+  }
+}
+
+/* ==========================================
+   MOBILE RESPONSIVENESS
+========================================== */
+
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 0 0 24px;
+  }
+
+  .welcome-banner {
+    min-height: auto;
+    padding: 28px 23px;
+    border-radius: 12px;
+  }
+
+  .welcome-banner h2 {
+    font-size: 25px;
+  }
+
+  .welcome-banner p {
+    font-size: 13px;
+  }
+
+  .welcome-eyebrow {
+    font-size: 9px;
+    letter-spacing: 1.2px;
+  }
+
+  .welcome-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .welcome-icon svg {
+    width: 48px;
+    height: 48px;
+  }
+
+  .dashboard-overview {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+  }
+
+  .overview-card {
+    min-height: 95px;
+  }
+
+  .application-section,
+  .account-section {
+    padding: 21px 18px;
+    margin-bottom: 20px;
+    border-radius: 11px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 20px;
+    padding-bottom: 17px;
+  }
+
+  .section-heading h2 {
+    font-size: 17px;
+  }
+
+  .application-details {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .application-review-notes,
+  .application-information {
+    grid-column: auto;
+  }
+
+  .account-information {
+    grid-template-columns: 1fr;
+  }
+
+  .account-detail:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #edf1f5;
+  }
+
+  .account-detail:last-child {
+    border-bottom: none;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE DEVICES
+========================================== */
+
+@media (max-width: 480px) {
+  .welcome-banner {
+    padding: 24px 19px;
+  }
+
+  .welcome-banner h2 {
+    font-size: 22px;
+  }
+
+  .welcome-banner p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .welcome-icon {
+    width: 58px;
+    height: 58px;
+  }
+
+  .welcome-icon svg {
+    width: 35px;
+    height: 35px;
+  }
+
+  .welcome-eyebrow {
+    max-width: 230px;
+    font-size: 8px;
+  }
+
+  .overview-card {
+    padding: 16px;
+  }
+
+  .overview-card-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .overview-card h3 {
+    font-size: 16px;
+  }
+
+  .application-section,
+  .account-section {
+    padding: 18px 15px;
+  }
+
+  .application-empty-state {
+    min-height: 230px;
+    padding: 25px 12px;
+  }
+
+  .application-empty-state h3 {
+    font-size: 15px;
+  }
+
+  .application-empty-state p {
+    font-size: 12px;
+  }
+
+  .application-button {
+    width: 100%;
+  }
+
+  .application-detail-card {
+    padding: 15px;
+  }
+}

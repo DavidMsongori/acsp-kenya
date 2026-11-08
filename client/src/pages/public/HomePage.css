@@ -1,0 +1,965 @@
+
+/* ==========================================
+   ACSP-KENYA HOMEPAGE
+   Brand Colours
+========================================== */
+
+:root {
+  --acsp-blue: #032f5e;
+  --acsp-yellow: #e2cd17;
+  --acsp-white: #ffffff;
+  --acsp-light: #f5f8fc;
+  --acsp-text: #24364b;
+}
+
+/* ==========================================
+   GENERAL
+========================================== */
+
+.home-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--acsp-white);
+}
+
+/* ==========================================
+   HERO SECTION
+========================================== */
+
+.home-hero {
+  position: relative;
+  width: 100%;
+  min-height: 740px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--acsp-blue);
+  color: var(--acsp-white);
+  isolation: isolate;
+}
+
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 55px 55px;
+}
+
+.home-hero-container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  min-height: 740px;
+  margin: 0 auto;
+  padding: 55px 25px 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   KENYA MAP WATERMARK
+========================================== */
+
+.hero-map-area {
+  position: absolute;
+  z-index: 0;
+  top: 47%;
+  left: 50%;
+  width: min(900px, 90%);
+  height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  opacity: 0.60;
+  pointer-events: none;
+}
+
+.hero-map-area .kenya-map-wrapper {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+  background: transparent;
+}
+
+.hero-map-area .kenya-map-panel {
+  width: 100%;
+  height: 680px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.hero-map-area .kenya-county-map {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hero-map-area .kenya-county-shape {
+  fill: none;
+  fill-opacity: 0;
+  stroke: var(--acsp-yellow);
+  stroke-width: 1.3;
+  stroke-opacity: 0.9;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  pointer-events: none;
+  cursor: default;
+}
+
+.hero-map-area .kenya-county-shape:hover {
+  fill: none;
+  fill-opacity: 0;
+  stroke: var(--acsp-yellow);
+  stroke-width: 1.3;
+}
+
+/* ==========================================
+   HERO CONTENT
+========================================== */
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: 1050px;
+  margin: -25px auto 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Organisation name */
+
+.hero-content h1 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  color: var(--acsp-white);
+  font-size: clamp(27px, 3.1vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Tagline */
+
+.hero-tagline {
+  margin: 15px 0 0;
+  color: var(--acsp-yellow);
+  font-size: clamp(17px, 1.8vw, 23px);
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+/* Quote */
+
+.hero-quote {
+  width: 100%;
+  max-width: 780px;
+  margin: 22px auto 0;
+  padding: 0 15px;
+  color: rgba(255, 255, 255, 0.94);
+  font-size: clamp(14px, 1.25vw, 17px);
+  font-weight: 400;
+  font-style: italic;
+  line-height: 1.7;
+  text-align: center;
+  border: none;
+}
+
+.hero-quote::before {
+  content: "“";
+  display: block;
+  margin-bottom: -10px;
+  color: var(--acsp-yellow);
+  font-family: Georgia, serif;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-quote::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 17px auto 0;
+  background: var(--acsp-yellow);
+  border-radius: 5px;
+}
+
+/* ==========================================
+   BUTTONS
+========================================== */
+
+.hero-actions {
+  width: 100%;
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+}
+
+.hero-btn {
+  min-height: 43px;
+  padding: 11px 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.hero-btn-primary {
+  color: var(--acsp-blue);
+  background: var(--acsp-yellow);
+  border: 1px solid var(--acsp-yellow);
+}
+
+.hero-btn-primary:hover {
+  color: var(--acsp-blue);
+  background: var(--acsp-white);
+  border-color: var(--acsp-white);
+}
+
+.hero-btn-outline {
+  color: var(--acsp-white);
+  background: transparent;
+  border: 1px solid var(--acsp-white);
+}
+
+.hero-btn-outline:hover {
+  color: var(--acsp-blue);
+  background: var(--acsp-white);
+  border-color: var(--acsp-white);
+}
+
+/* ==========================================
+   IMPACT NUMBERS
+========================================== */
+
+.hero-impact {
+  width: 100%;
+  max-width: 850px;
+  margin: 42px auto 0;
+  padding-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.impact-item {
+  min-height: 70px;
+  padding: 5px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: none;
+}
+
+.impact-item strong {
+  display: block;
+  color: var(--acsp-yellow);
+  font-size: clamp(29px, 2.8vw, 38px);
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.impact-item span {
+  display: block;
+  margin-top: 7px;
+  color: var(--acsp-white);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
+
+/* Bottom accent */
+
+.hero-bottom-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--acsp-yellow);
+}
+
+/* ==========================================
+   INTRODUCTION
+========================================== */
+
+.home-intro {
+  width: 100%;
+  padding: 85px 30px;
+  background: var(--acsp-white);
+}
+
+.home-intro-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 55px;
+}
+
+.intro-heading {
+  max-width: 550px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  margin-bottom: 17px;
+  color: var(--acsp-blue);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.intro-heading h2 {
+  margin: 0;
+  color: var(--acsp-blue);
+  font-size: clamp(30px, 3vw, 43px);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.intro-heading h2 span {
+  color: #b59f00;
+}
+
+.intro-description {
+  margin: 0;
+  color: var(--acsp-text);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* ==========================================
+   FOCUS AREAS
+========================================== */
+
+.home-pillars {
+  width: 100%;
+  padding: 20px 30px 90px;
+  background: var(--acsp-white);
+}
+
+.pillars-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.pillar-card {
+  padding: 32px 28px;
+  background: var(--acsp-light);
+  border: 1px solid #e5ebf2;
+  border-bottom: 4px solid var(--acsp-yellow);
+  border-radius: 7px;
+  transition: border-color 0.25s ease;
+}
+
+.pillar-card:hover {
+  border-color: var(--acsp-yellow);
+}
+
+.pillar-icon {
+  width: 52px;
+  height: 52px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--acsp-blue);
+  background: rgba(226, 205, 23, 0.2);
+  border-radius: 6px;
+}
+
+.pillar-card h3 {
+  margin: 0 0 13px;
+  color: var(--acsp-blue);
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.pillar-card p {
+  margin: 0;
+  color: var(--acsp-text);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+  .home-hero,
+  .home-hero-container {
+    min-height: 700px;
+  }
+
+  .home-hero-container {
+    padding: 45px 25px 50px;
+  }
+
+  .hero-content {
+    max-width: 900px;
+    margin-top: -20px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(27px, 3.8vw, 38px);
+  }
+
+  .hero-map-area {
+    width: 100%;
+    height: 650px;
+    opacity: 0.19;
+  }
+
+  .hero-map-area .kenya-map-panel {
+    height: 630px;
+  }
+
+  .home-intro-container {
+    gap: 35px;
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .home-hero,
+  .home-hero-container {
+    min-height: auto;
+  }
+
+  .home-hero-container {
+    padding: 65px 18px 55px;
+  }
+
+  .hero-content {
+    margin-top: -12px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(25px, 6.5vw, 34px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-tagline {
+    margin-top: 13px;
+    font-size: clamp(15px, 3.8vw, 19px);
+    letter-spacing: 0;
+  }
+
+  .hero-quote {
+    margin-top: 19px;
+    padding: 0 3px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+
+  .hero-quote::before {
+    font-size: 32px;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
+    gap: 11px;
+    flex-direction: column;
+  }
+
+  .hero-btn {
+    width: 100%;
+    max-width: 260px;
+    min-height: 42px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .hero-impact {
+    margin-top: 32px;
+    padding-top: 17px;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 14px;
+  }
+
+  .impact-item {
+    min-height: 65px;
+    padding: 5px;
+    border: none;
+  }
+
+  .impact-item strong {
+    font-size: 30px;
+  }
+
+  .impact-item span {
+    margin-top: 5px;
+    font-size: 11px;
+  }
+
+  .hero-map-area {
+    width: 130%;
+    height: 520px;
+    opacity: 0.15;
+  }
+
+  .hero-map-area .kenya-map-panel {
+    height: 500px;
+  }
+
+  /* Introduction */
+
+  .home-intro {
+    padding: 65px 22px;
+  }
+
+  .home-intro-container {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .intro-heading h2 {
+    font-size: 30px;
+  }
+
+  .intro-description {
+    font-size: 15px;
+  }
+
+  /* Focus areas */
+
+  .home-pillars {
+    padding: 10px 22px 65px;
+  }
+
+  .pillars-container {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .pillar-card {
+    padding: 27px 23px;
+  }
+}
+
+/* ==========================================
+   SMALL MOBILE SCREENS
+========================================== */
+
+@media (max-width: 380px) {
+  .home-hero-container {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-content h1 {
+    font-size: 24px;
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+  }
+
+  .hero-quote {
+    font-size: 13px;
+  }
+
+  .impact-item strong {
+    font-size: 27px;
+  }
+}
+
+
+/* ==========================================
+   REFINED HERO LAYOUT
+========================================== */
+
+/* Move hero contents upwards */
+
+.home-hero,
+.home-hero-container {
+  min-height: 680px;
+}
+
+.home-hero-container {
+  padding-top: 25px;
+  padding-bottom: 45px;
+}
+
+.hero-content {
+  margin-top: -55px;
+  max-width: 1200px;
+}
+
+/* Organisation heading */
+
+.hero-content h1.hero-title {
+  width: 100%;
+  font-size: clamp(27px, 3vw, 41px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+  white-space: normal;
+  overflow-wrap: normal;
+}
+
+.hero-title-white {
+  color: #ffffff;
+}
+
+.hero-title-yellow {
+  color: #e2cd17;
+}
+
+/* Tagline spacing */
+
+.hero-tagline {
+  margin-top: 10px;
+  font-size: clamp(16px, 1.7vw, 21px);
+  line-height: 1.3;
+}
+
+/* Quote spacing and remove decorative line */
+
+.hero-quote {
+  margin-top: 15px;
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0 12px;
+}
+
+.hero-quote::before {
+  font-size: 30px;
+  margin-bottom: -8px;
+}
+
+.hero-quote::after {
+  display: none;
+  content: none;
+}
+
+/* Buttons: smaller and closer to quote */
+
+.hero-actions {
+  margin-top: 17px;
+  gap: 12px;
+}
+
+.hero-btn {
+  min-height: 38px;
+  padding: 9px 17px;
+  font-size: 12px;
+  gap: 7px;
+  border-radius: 4px;
+}
+
+.hero-btn svg {
+  width: 15px;
+  height: 15px;
+}
+
+/* Impact numbers: remove horizontal separator */
+
+.hero-impact {
+  margin-top: 25px;
+  padding-top: 0;
+  border-top: none;
+  max-width: 800px;
+  gap: 10px;
+}
+
+.impact-item {
+  min-height: 60px;
+  padding: 3px 8px;
+  border: none;
+}
+
+.impact-item strong {
+  font-size: clamp(27px, 2.5vw, 34px);
+  line-height: 1.05;
+}
+
+.impact-item span {
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* Keep the map large but slightly higher */
+
+.hero-map-area {
+  top: 46%;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 1100px) {
+  .home-hero,
+  .home-hero-container {
+    min-height: 650px;
+  }
+
+  .hero-content {
+    margin-top: -40px;
+  }
+
+  .hero-content h1.hero-title {
+    font-size: clamp(27px, 3.5vw, 36px);
+  }
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 700px) {
+  .home-hero,
+  .home-hero-container {
+    min-height: auto;
+  }
+
+  .home-hero-container {
+    padding: 45px 17px 45px;
+  }
+
+  .hero-content {
+    margin-top: -15px;
+  }
+
+  .hero-content h1.hero-title {
+    font-size: clamp(24px, 6vw, 32px);
+    line-height: 1.25;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-tagline {
+    margin-top: 9px;
+    font-size: 16px;
+    line-height: 1.35;
+  }
+
+  .hero-quote {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    padding: 0 3px;
+  }
+
+  .hero-quote::before {
+    font-size: 27px;
+  }
+
+  .hero-actions {
+    margin-top: 16px;
+    gap: 9px;
+  }
+
+  .hero-btn {
+    min-height: 36px;
+    max-width: 235px;
+    padding: 8px 14px;
+    font-size: 12px;
+  }
+
+  .hero-impact {
+    margin-top: 23px;
+    padding-top: 0;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 12px;
+    border-top: none;
+  }
+
+  .impact-item {
+    min-height: 55px;
+    padding: 3px;
+    border: none;
+  }
+
+  .impact-item strong {
+    font-size: 28px;
+  }
+
+  .impact-item span {
+    margin-top: 4px;
+    font-size: 11px;
+  }
+
+  .hero-map-area {
+    top: 47%;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero-content h1.hero-title {
+    font-size: 23px;
+  }
+
+  .hero-tagline {
+    font-size: 15px;
+  }
+
+  .hero-quote {
+    font-size: 12px;
+  }
+}
+
+/* FINAL HERO SIZE AND TYPOGRAPHY REFINEMENTS */
+
+/* Tagline - remove boldness */
+.hero-tagline {
+  font-weight: 400;
+}
+
+/* Smaller buttons */
+.hero-actions {
+  margin-top: 15px;
+  gap: 10px;
+}
+
+.hero-btn {
+  min-height: 34px;
+  padding: 7px 13px;
+  font-size: 11px;
+  font-weight: 600;
+  gap: 6px;
+  border-radius: 4px;
+}
+
+.hero-btn svg {
+  width: 13px;
+  height: 13px;
+}
+
+/* Smaller impact numbers */
+.hero-impact {
+  margin-top: 20px;
+  gap: 8px;
+}
+
+.impact-item {
+  min-height: 52px;
+  padding: 3px 6px;
+}
+
+.impact-item strong {
+  font-size: clamp(24px, 2.2vw, 30px);
+  line-height: 1.05;
+}
+
+.impact-item span {
+  margin-top: 3px;
+  font-size: 11px;
+}
+
+/* Mobile refinements */
+@media (max-width: 700px) {
+  .hero-actions {
+    margin-top: 14px;
+    gap: 8px;
+  }
+
+  .hero-btn {
+    min-height: 32px;
+    padding: 7px 11px;
+    font-size: 10px;
+  }
+
+  .hero-btn svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .hero-impact {
+    margin-top: 18px;
+    row-gap: 10px;
+  }
+
+  .impact-item {
+    min-height: 48px;
+    padding: 2px;
+  }
+
+  .impact-item strong {
+    font-size: 25px;
+  }
+
+  .impact-item span {
+    font-size: 10px;
+  }
+}
+/* Subtle right-side hero background photograph */
+.hero-background-image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 52%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      #032f5e 0%,
+      rgba(3, 47, 94, 0.75) 25%,
+      rgba(3, 47, 94, 0.48) 100%
+    ),
+    url("../../assets/bg.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 700px) {
+  .hero-background-image {
+    width: 100%;
+    opacity: 0.05;
+  }
+}

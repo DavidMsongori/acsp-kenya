@@ -1,0 +1,128 @@
+
+.kenya-map-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.kenya-map-panel {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.kenya-county-map {
+  display: block;
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  overflow: visible;
+}
+
+/* Default county appearance */
+.kenya-county-shape {
+  fill: transparent;
+  stroke: #94a3b8;
+  stroke-width: 1.15;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transition:
+    fill 0.25s ease,
+    stroke 0.25s ease,
+    stroke-width 0.25s ease,
+    opacity 0.25s ease;
+}
+
+/* Counties with published activities */
+.kenya-county-shape.has-activities {
+  fill: #0b1f4d;
+  stroke: #ffffff;
+  stroke-width: 1.2;
+}
+
+/* Interactive counties */
+.kenya-map-interactive .interactive-county {
+  cursor: pointer;
+  outline: none;
+}
+
+/* Hovered county */
+.kenya-map-interactive
+.kenya-county-shape.interactive-county:hover {
+  fill: #2563eb;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+/* Keyboard focus */
+.kenya-map-interactive
+.kenya-county-shape.interactive-county:focus-visible {
+  fill: #2563eb;
+  stroke: #f59e0b;
+  stroke-width: 2.5;
+}
+
+/* Selected county */
+.kenya-county-shape.selected-county {
+  fill: #2563eb;
+  stroke: #ffffff;
+  stroke-width: 2;
+}
+
+/* Map caption */
+.kenya-map-caption {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.kenya-map-caption-line {
+  display: block;
+  width: 35px;
+  height: 1px;
+  background: #cbd5e1;
+}
+
+/* County details / isolated county map */
+.kenya-map-wrapper:not(.kenya-map-interactive)
+.kenya-county-shape {
+  cursor: default;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .kenya-county-map {
+    max-width: 100%;
+  }
+
+  .kenya-map-caption {
+    font-size: 9px;
+    letter-spacing: 1.5px;
+    gap: 8px;
+  }
+
+  .kenya-map-caption-line {
+    width: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kenya-map-wrapper {
+    gap: 10px;
+  }
+
+  .kenya-map-caption {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
