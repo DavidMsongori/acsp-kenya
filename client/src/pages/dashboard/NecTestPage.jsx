@@ -10,7 +10,7 @@ const NecTestPage = () => {
   useEffect(() => {
     const fetchApplications = async () => {
       try {
-        const { data } = await api.get("/api/nec/applications");
+        const { data } = await api.get("/nec/applications");
         setResult(data);
       } catch (err) {
         setError(

@@ -149,7 +149,7 @@ const getCloudinaryPublicId = (imageUrl) => {
       setLoading(true);
       setError("");
 
-      const response = await api.get("/api/admin/programmes");
+      const response = await api.get("/admin/programmes");
 
       setProgrammes(response.data.programmes || []);
     } catch (err) {
@@ -266,7 +266,7 @@ const handleCreateActivity = async (event) => {
       });
 
       const uploadResponse = await api.post(
-        "/api/uploads/activity-images",
+        "/uploads/activity-images",
         imageData
       );
 
@@ -292,7 +292,7 @@ const handleCreateActivity = async (event) => {
 if (editingActivity) {
   // UPDATE EXISTING ACTIVITY
   response = await api.patch(
-    `/api/admin/programmes/${selectedProgramme.id}/activities/${editingActivity.id}`,
+    `/admin/programmes/${selectedProgramme.id}/activities/${editingActivity.id}`,
     payload
   );
 
@@ -308,7 +308,7 @@ if (editingActivity) {
           );
         }
 
-        return api.delete("/api/uploads/programme-image", {
+        return api.delete("/uploads/programme-image", {
           data: { publicId },
         });
       })
@@ -327,7 +327,7 @@ if (editingActivity) {
 } else {
   // CREATE NEW ACTIVITY
   response = await api.post(
-    `/api/admin/programmes/${selectedProgramme.id}/activities`,
+    `/admin/programmes/${selectedProgramme.id}/activities`,
     payload
   );
 }
@@ -409,7 +409,7 @@ const handleActivityStatusChange = async (activity, newStatus) => {
     setUpdatingActivityStatus(true);
 
     const response = await api.patch(
-      `/api/admin/programmes/${selectedProgramme.id}/activities/${activity.id}/status`,
+      `/admin/programmes/${selectedProgramme.id}/activities/${activity.id}/status`,
       { status: newStatus }
     );
 
@@ -441,7 +441,7 @@ const handleActivityStatusChange = async (activity, newStatus) => {
     try {
       setCountiesLoading(true);
 
-      const response = await api.get("/api/counties");
+      const response = await api.get("/counties");
 
       setCounties(response.data.counties || []);
     } catch (err) {
@@ -467,7 +467,7 @@ const handleActivityStatusChange = async (activity, newStatus) => {
       setActivities([]);
 
       const response = await api.get(
-        `/api/admin/programmes/${programme.id}/activities`
+        `/admin/programmes/${programme.id}/activities`
       );
 
       setActivities(response.data.activities || []);
@@ -634,9 +634,9 @@ const handleCreateProgramme = async (event) => {
       imageData.append("coverImage", selectedCoverImage);
 
       const uploadResponse = await api.post(
-        "/api/uploads/programme-cover",
-        imageData
-      );
+  "/uploads/programme-cover",
+  imageData
+);
 
       uploadedCoverImage = uploadResponse.data.image;
     }
@@ -658,7 +658,7 @@ const handleCreateProgramme = async (event) => {
     if (editingProgramme) {
       // UPDATE EXISTING PROGRAMME
       response = await api.patch(
-        `/api/admin/programmes/${editingProgramme.id}`,
+        `/admin/programmes/${editingProgramme.id}`,
         payload
       );
 
@@ -668,7 +668,7 @@ const handleCreateProgramme = async (event) => {
     } else {
       // CREATE NEW PROGRAMME
       response = await api.post(
-        "/api/admin/programmes",
+        "/admin/programmes",
         payload
       );
 
@@ -690,7 +690,7 @@ const handleCreateProgramme = async (event) => {
 
       if (oldPublicId) {
         try {
-          await api.delete("/api/uploads/programme-image", {
+          await api.delete("/uploads/programme-image", {
             data: { publicId: oldPublicId },
           });
         } catch (deleteError) {
@@ -726,7 +726,7 @@ const handleCreateProgramme = async (event) => {
     // CLEAN UP NEW IMAGE IF SAVING FAILED
     if (uploadedCoverImage?.publicId) {
       try {
-        await api.delete("/api/uploads/programme-image", {
+        await api.delete("/uploads/programme-image", {
           data: {
             publicId: uploadedCoverImage.publicId,
           },
@@ -762,7 +762,7 @@ const handleCreateProgramme = async (event) => {
       setUpdatingStatus(programme.id);
 
       const response = await api.patch(
-        `/api/admin/programmes/${programme.id}/status`,
+        `/admin/programmes/${programme.id}/status`,
         { status }
       );
 
@@ -829,7 +829,7 @@ const confirmDeleteProgramme = async () => {
     setDeletingProgrammeId(programmeId);
 
     const response = await api.delete(
-      `/api/admin/programmes/${programmeId}`
+      `/admin/programmes/${programmeId}`
     );
 
     toast.success(

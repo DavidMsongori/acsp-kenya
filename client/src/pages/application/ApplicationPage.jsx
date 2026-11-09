@@ -41,7 +41,7 @@ const ApplicationPage = () => {
       try {
         setLoadingCounties(true);
 
-        const { data } = await api.get("/api/counties");
+        const { data } = await api.get("/counties");
 
         setCounties(data.counties || []);
       } catch (error) {
@@ -116,19 +116,19 @@ const ApplicationPage = () => {
   // Upload Application Images
   // ==========================================
 
-  const uploadImages = async () => {
-    const imageData = new FormData();
+ const uploadImages = async () => {
+  const imageData = new FormData();
 
-    imageData.append("associationLogo", associationLogo);
-    imageData.append("profilePhoto", profilePhoto);
+  imageData.append("associationLogo", associationLogo);
+  imageData.append("profilePhoto", profilePhoto);
 
-    const { data } = await api.post(
-      "/api/uploads/application-images",
-      imageData
-    );
+  const { data } = await api.post(
+    "/uploads/application-images",
+    imageData
+  );
 
-    return data.images;
-  };
+  return data.images;
+};
 
   // ==========================================
   // Submit Application

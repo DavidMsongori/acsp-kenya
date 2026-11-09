@@ -7,7 +7,7 @@ import api from "./api";
 
 export const submitApplication = async (applicationData) => {
   const { data } = await api.post(
-    "/api/applications",
+    "/applications",
     applicationData
   );
 
@@ -19,7 +19,7 @@ export const submitApplication = async (applicationData) => {
 // ==========================================
 
 export const getMyApplication = async () => {
-  const { data } = await api.get("/api/applications/me");
+  const { data } = await api.get("/applications/me");
 
   return data;
 };

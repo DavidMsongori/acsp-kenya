@@ -97,7 +97,7 @@ const NecDashboardPage = () => {
       setLoading(true);
       setError("");
 
-      const response = await api.get("/api/nec/applications");
+      const response = await api.get("/nec/applications");
 
       setApplications(response.data.applications || []);
     } catch (err) {
@@ -123,7 +123,7 @@ const NecDashboardPage = () => {
       setAssociationsLoading(true);
       setAssociationsError("");
 
-      const response = await api.get("/api/nec/associations");
+      const response = await api.get("/nec/associations");
 
       setAssociations(response.data.associations || []);
     } catch (err) {
@@ -210,7 +210,7 @@ const NecDashboardPage = () => {
       setReviewSubmitting(true);
 
       const response = await api.patch(
-        `/api/nec/applications/${selectedApplication.id}/under-review`
+        `/nec/applications/${selectedApplication.id}/under-review`
       );
 
       toast.success(
@@ -247,7 +247,7 @@ const NecDashboardPage = () => {
       setReviewSubmitting(true);
 
       const response = await api.patch(
-        `/api/nec/applications/${selectedApplication.id}/review`,
+        `/nec/applications/${selectedApplication.id}/review`,
         {
           decision,
           reviewNotes,
@@ -362,7 +362,7 @@ const NecDashboardPage = () => {
       setVerificationSubmitting(true);
 
       const response = await api.patch(
-        `/api/nec/associations/${selectedAssociation.id}/verification`,
+        `/nec/associations/${selectedAssociation.id}/verification`,
         {
           decision,
           verificationNotes,
