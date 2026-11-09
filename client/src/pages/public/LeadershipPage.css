@@ -1,0 +1,837 @@
+
+/* =========================================
+   ACSP-KENYA PUBLIC LEADERSHIP PAGE
+========================================= */
+
+.leadership-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #263445;
+}
+
+.leadership-container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO SECTION
+========================================= */
+
+.leadership-hero {
+  position: relative;
+  padding: 45px 0 35px;
+  background:
+    linear-gradient(
+      rgba(3, 47, 94, 0.82),
+      rgba(3, 47, 94, 0.88)
+    ),
+    url("/src/assets/leader.jpg") center 35% / cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.leadership-hero::before,
+.leadership-hero::after {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(226, 205, 23, 0.15);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.leadership-hero::before {
+  top: -210px;
+  left: -100px;
+}
+
+.leadership-hero::after {
+  right: -130px;
+  bottom: -250px;
+  width: 430px;
+  height: 430px;
+}
+
+.leadership-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 950px;
+}
+
+.leadership-eyebrow,
+.leadership-section-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 18px;
+  margin-bottom: 19px;
+  border: 1px solid rgba(226, 205, 23, 0.65);
+  border-radius: 5px;
+  background: rgba(226, 205, 23, 0.1);
+  color: #e2cd17;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.leadership-hero h1 {
+  max-width: 850px;
+  margin: 0 auto 19px;
+  color: #ffffff;
+  font-size: clamp(32px, 4.5vw, 51px);
+  line-height: 1.15;
+  font-weight: 850;
+}
+
+.leadership-hero h1 span {
+  color: #e2cd17;
+}
+
+.leadership-hero-content > p {
+  max-width: 780px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.87);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.leadership-hero-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 13px;
+  margin-top: 29px;
+}
+
+.leadership-hero-actions a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 46px;
+  padding: 12px 20px;
+  border-radius: 5px;
+  background: #e2cd17;
+  color: #032f5e;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: 0.25s ease;
+}
+
+.leadership-hero-actions a:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+}
+
+.leadership-hero-actions a.secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  background: transparent;
+  color: #ffffff;
+}
+
+.leadership-hero-actions a.secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.leadership-hero-stats {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0;
+  margin: 48px auto 0;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.17);
+}
+
+.leadership-hero-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 190px;
+  padding: 5px 25px;
+}
+
+.leadership-hero-stats > div + div {
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.leadership-hero-stats strong {
+  color: #e2cd17;
+  font-size: 30px;
+  font-weight: 850;
+}
+
+.leadership-hero-stats span {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 12px;
+  font-weight: 650;
+}
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.leadership-section {
+  padding: 68px 0;
+  background: #ffffff;
+}
+
+.leadership-section-heading {
+  max-width: 790px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.leadership-section-label {
+  margin-bottom: 13px;
+  border-color: rgba(226, 205, 23, 0.6);
+  color: #032f5e;
+}
+
+.leadership-section-heading h2 {
+  margin: 0;
+  color: #032f5e;
+  font-size: clamp(27px, 3.3vw, 37px);
+  line-height: 1.2;
+  font-weight: 850;
+}
+
+.leadership-gold-line {
+  width: 55px;
+  height: 4px;
+  margin: 17px auto 21px;
+  border-radius: 5px;
+  background: #e2cd17;
+}
+
+.leadership-section-heading > p {
+  margin: 0 auto;
+  color: #657386;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LEADERSHIP CARDS
+========================================= */
+
+.leadership-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 23px;
+}
+
+.leadership-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid #e7ebf0;
+  border-radius: 9px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(3, 47, 94, 0.055);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.leadership-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(3, 47, 94, 0.11);
+}
+
+.leadership-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 235px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #032f5e, #14578a);
+  color: #e2cd17;
+}
+
+.leadership-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+
+.leadership-photo span {
+  font-size: 54px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.leadership-card-content {
+  flex: 1;
+  padding: 21px 20px 18px;
+  text-align: center;
+}
+
+.leadership-card-category {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #a48f00;
+  font-size: 10px;
+  font-weight: 850;
+  letter-spacing: 1.1px;
+}
+
+.leadership-card-content h3 {
+  margin: 0 0 9px;
+  color: #032f5e;
+  font-size: 19px;
+  line-height: 1.35;
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.leadership-position {
+  margin: 0;
+  color: #526276;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 650;
+}
+
+.leadership-bio {
+  margin: 13px 0 0;
+  color: #718096;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.leadership-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 12px 15px;
+  border-top: 1px solid #edf0f4;
+  background: #f8fafc;
+  color: #236a49;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+/* =========================================
+   GENERAL ASSEMBLY
+========================================= */
+
+.assembly-section {
+  background: #f5f7fa;
+}
+
+.assembly-county-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.assembly-county-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 17px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dfe5ec;
+  color: #032f5e;
+}
+
+.assembly-county-heading h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 850;
+}
+
+.assembly-county-heading > svg {
+  color: #b29c00;
+}
+
+.assembly-county-heading > span {
+  margin-left: auto;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #e8edf4;
+  color: #526276;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.assembly-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.assembly-card .leadership-photo {
+  height: 215px;
+}
+
+.assembly-acronym {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 5px 11px;
+  border-radius: 4px;
+  background: #f4f1d9;
+  color: #756600;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+/* =========================================
+   LOADING, EMPTY AND ERROR STATES
+========================================= */
+
+.leadership-state,
+.leadership-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 180px;
+  padding: 30px 20px;
+  border: 1px dashed #d7dee8;
+  border-radius: 9px;
+  background: #f9fafc;
+  color: #657386;
+  text-align: center;
+}
+
+.leadership-state p,
+.leadership-empty p {
+  margin: 12px 0 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.leadership-empty > svg {
+  color: #b29c00;
+}
+
+.leadership-empty h3 {
+  margin: 14px 0 0;
+  color: #032f5e;
+  font-size: 18px;
+}
+
+.leadership-spinner {
+  animation: leadership-spin 1s linear infinite;
+  color: #032f5e;
+}
+
+@keyframes leadership-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.leadership-error {
+  width: min(1120px, 92%);
+  margin: 0 auto 35px;
+  padding: 18px;
+  border: 1px solid #f0c7c7;
+  border-radius: 7px;
+  background: #fff8f8;
+  color: #a12b2b;
+  text-align: center;
+}
+
+.leadership-error p {
+  margin: 0 0 8px;
+  font-size: 13px;
+}
+
+.leadership-error button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 5px;
+  background: #032f5e;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 900px) {
+  .leadership-card-grid,
+  .assembly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .leadership-photo {
+    height: 220px;
+  }
+}
+
+@media (max-width: 600px) {
+  .leadership-hero {
+    padding: 55px 0 43px;
+  }
+
+  .leadership-hero h1 {
+    font-size: 32px;
+  }
+
+  .leadership-hero-content > p {
+    font-size: 14px;
+  }
+
+  .leadership-hero-actions {
+    flex-direction: column;
+  }
+
+  .leadership-hero-actions a {
+    width: 100%;
+  }
+
+  .leadership-hero-stats {
+    margin-top: 32px;
+    padding-top: 20px;
+  }
+
+  .leadership-hero-stats > div {
+    min-width: 50%;
+    padding: 10px 7px;
+  }
+
+  .leadership-hero-stats > div + div {
+    border-left: 0;
+  }
+
+  .leadership-hero-stats > div:last-child {
+    width: 100%;
+  }
+
+  .leadership-hero-stats strong {
+    font-size: 25px;
+  }
+
+  .leadership-section {
+    padding: 48px 0;
+  }
+
+  .leadership-section-heading {
+    margin-bottom: 29px;
+  }
+
+  .leadership-section-heading > p {
+    font-size: 13px;
+  }
+
+  .leadership-card-grid,
+  .assembly-grid {
+    grid-template-columns: 1fr;
+    gap: 17px;
+  }
+
+  .leadership-photo,
+  .assembly-card .leadership-photo {
+    height: 260px;
+  }
+
+  .assembly-county-heading {
+    flex-wrap: wrap;
+  }
+
+  .assembly-county-heading h3 {
+    font-size: 16px;
+  }
+
+  .assembly-county-heading > span {
+    font-size: 10px;
+  }
+}
+
+/* =========================================
+   LEADERSHIP PAGE SIZE REFINEMENTS
+========================================= */
+
+/* Smaller hero eyebrow */
+.leadership-eyebrow {
+  padding: 6px 14px;
+  margin-bottom: 16px;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+/* More compact leadership cards */
+.leadership-card-grid,
+.assembly-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.leadership-photo {
+  height: 165px;
+}
+
+.assembly-card .leadership-photo {
+  height: 155px;
+}
+
+.leadership-card-content {
+  padding: 15px 14px 13px;
+}
+
+.leadership-card-category {
+  font-size: 9px;
+  margin-bottom: 7px;
+}
+
+.leadership-card-content h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.leadership-position {
+  font-size: 12px;
+}
+
+.leadership-bio {
+  font-size: 11px;
+  margin-top: 9px;
+}
+
+.leadership-card-footer {
+  padding: 9px 10px;
+  font-size: 10px;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .leadership-card-grid,
+  .assembly-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Smaller tablets */
+@media (max-width: 760px) {
+  .leadership-card-grid,
+  .assembly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .leadership-photo,
+  .assembly-card .leadership-photo {
+    height: 165px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .leadership-card-grid,
+  .assembly-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .leadership-photo,
+  .assembly-card .leadership-photo {
+    height: 135px;
+  }
+
+  .leadership-card-content {
+    padding: 12px 9px;
+  }
+
+  .leadership-card-content h3 {
+    font-size: 14px;
+  }
+
+  .leadership-position {
+    font-size: 11px;
+  }
+
+  .leadership-card-footer {
+    font-size: 9px;
+  }
+}
+
+/* Remove decorative hero circles */
+.leadership-hero::before,
+.leadership-hero::after {
+  display: none;
+}
+
+/* Remove separators between hero statistics */
+.leadership-hero-stats > div + div {
+  border-left: none;
+}
+
+.leadership-hero-stats {
+  border-top: none;
+}
+
+/* =========================================
+   COMPACT LEADERSHIP HERO
+========================================= */
+
+.leadership-hero {
+  padding: 45px 0 35px;
+}
+
+.leadership-eyebrow {
+  margin-bottom: 12px;
+}
+
+.leadership-hero h1 {
+  margin-bottom: 12px;
+}
+
+.leadership-hero-content > p {
+  line-height: 1.6;
+}
+
+.leadership-hero-actions {
+  margin-top: 20px;
+}
+
+.leadership-hero-stats {
+  margin-top: 25px;
+  padding-top: 0;
+}
+
+.leadership-hero-stats > div {
+  padding: 3px 20px;
+}
+
+.leadership-hero-stats strong {
+  font-size: 26px;
+}
+
+/* Mobile spacing */
+@media (max-width: 600px) {
+  .leadership-hero {
+    padding: 35px 0 28px;
+  }
+
+  .leadership-hero-actions {
+    margin-top: 17px;
+  }
+
+  .leadership-hero-stats {
+    margin-top: 20px;
+  }
+
+  .leadership-hero-stats strong {
+    font-size: 23px;
+  }
+}
+
+/* =========================================
+   COMPACT NATIONAL SECRETARIAT SECTION
+========================================= */
+
+#national-secretariat {
+  padding-top: 30px;
+  padding-bottom: 35px;
+}
+
+#national-secretariat .leadership-section-heading {
+  margin-bottom: 22px;
+}
+
+#national-secretariat .leadership-section-heading h2 {
+  margin-top: 0;
+}
+
+#national-secretariat .leadership-gold-line {
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+#national-secretariat .leadership-section-heading > p {
+  line-height: 1.6;
+}
+
+/* Keep empty directory state compact */
+#national-secretariat .leadership-empty {
+  min-height: 110px;
+  padding: 18px;
+}
+
+#national-secretariat .leadership-empty > svg {
+  width: 27px;
+  height: 27px;
+}
+
+#national-secretariat .leadership-empty h3 {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+#national-secretariat .leadership-empty p {
+  margin-top: 6px;
+}
+
+/* =========================================
+   COMPACT GENERAL ASSEMBLY SECTION
+========================================= */
+
+#general-assembly {
+  padding-top: 30px;
+  padding-bottom: 35px;
+}
+
+#general-assembly .leadership-section-heading {
+  margin-bottom: 22px;
+}
+
+#general-assembly .leadership-section-heading h2 {
+  margin-top: 0;
+}
+
+#general-assembly .leadership-gold-line {
+  margin-top: 12px;
+  margin-bottom: 14px;
+}
+
+#general-assembly .leadership-section-heading > p {
+  line-height: 1.6;
+}
+
+/* Remove space previously used by county headings */
+#general-assembly .assembly-county-groups {
+  gap: 18px;
+}
+
+#general-assembly .assembly-county-heading {
+  display: none;
+}
+
+/* Compact empty directory */
+#general-assembly .leadership-empty {
+  min-height: 110px;
+  padding: 18px;
+}
+
+#general-assembly .leadership-empty > svg {
+  width: 27px;
+  height: 27px;
+}
+
+#general-assembly .leadership-empty h3 {
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+#general-assembly .leadership-empty p {
+  margin-top: 6px;
+}

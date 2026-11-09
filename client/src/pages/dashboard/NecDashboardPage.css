@@ -1185,3 +1185,291 @@
     font-size: 11px;
   }
 }
+
+
+/* ==========================================
+   NATIONAL SECRETARIAT
+========================================== */
+
+.nec-secretariat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nec-secretariat-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.nec-secretariat-field label {
+  color: #344b63;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.nec-secretariat-field input,
+.nec-secretariat-field select,
+.nec-secretariat-field textarea {
+  width: 100%;
+  min-height: 43px;
+  padding: 11px 13px;
+  color: #344b63;
+  background: #f8fafc;
+  border: 1px solid #dfe6ee;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.nec-secretariat-field input:focus,
+.nec-secretariat-field select:focus,
+.nec-secretariat-field textarea:focus {
+  border-color: #3975aa;
+  box-shadow: 0 0 0 3px rgba(3, 47, 94, 0.08);
+}
+
+.nec-secretariat-field textarea {
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.nec-secretariat-field > small {
+  color: #8290a2;
+  font-size: 10px;
+  text-align: right;
+}
+
+.nec-secretariat-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+
+.nec-secretariat-hint {
+  margin: 0;
+  color: #8290a2;
+  font-size: 11px;
+}
+
+.nec-candidate-results {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  max-height: 260px;
+  overflow-y: auto;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 9px;
+  box-shadow: 0 10px 25px rgba(18, 42, 70, 0.12);
+}
+
+.nec-candidate-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px;
+  text-align: left;
+  background: #ffffff;
+  border: none;
+  border-bottom: 1px solid #edf1f5;
+}
+
+.nec-candidate-option:last-child {
+  border-bottom: none;
+}
+
+.nec-candidate-option:hover {
+  background: #f5f9fd;
+}
+
+.nec-candidate-option img,
+.nec-candidate-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  object-fit: cover;
+  color: #6d8299;
+  background: #eef3f8;
+  border-radius: 50%;
+}
+
+.nec-candidate-option > span {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nec-candidate-option strong {
+  color: #173653;
+  font-size: 12px;
+}
+
+.nec-candidate-option small {
+  color: #8290a2;
+  font-size: 11px;
+}
+
+.nec-candidate-option > svg {
+  color: #21834d;
+}
+
+.nec-selected-candidate {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  background: #eaf6ef;
+  border: 1px solid #d2ebdc;
+  border-radius: 9px;
+}
+
+.nec-selected-candidate > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.nec-selected-candidate strong {
+  color: #286447;
+  font-size: 12px;
+}
+
+.nec-selected-candidate span {
+  color: #668b76;
+  font-size: 11px;
+}
+
+.nec-selected-candidate button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  color: #a3333d;
+  background: #ffffff;
+  border: 1px solid #e5d1d3;
+  border-radius: 7px;
+}
+
+.nec-secretariat-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px;
+}
+
+.nec-secretariat-form-actions button {
+  min-height: 43px;
+}
+
+.nec-secretariat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nec-secretariat-member {
+  display: grid;
+  grid-template-columns: minmax(180px, 1.5fr) minmax(130px, 1fr) minmax(110px, 0.9fr) minmax(150px, 1.1fr) auto;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #ffffff;
+  border: 1px solid #e9edf2;
+  border-radius: 10px;
+}
+
+.nec-secretariat-member-identity {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-width: 0;
+}
+
+.nec-secretariat-member-identity img {
+  width: 43px;
+  height: 43px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.nec-secretariat-member-identity > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nec-secretariat-member-identity strong {
+  color: #173653;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.nec-secretariat-member-identity span {
+  color: #8290a2;
+  font-size: 11px;
+}
+
+.nec-secretariat-member-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.nec-secretariat-member-detail span {
+  color: #8a98a9;
+  font-size: 10px;
+  font-weight: 650;
+  text-transform: uppercase;
+}
+
+.nec-secretariat-member-detail strong {
+  color: #40556d;
+  font-size: 11px;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 1100px) {
+  .nec-secretariat-member {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nec-secretariat-member-identity {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .nec-secretariat-form-grid,
+  .nec-secretariat-member {
+    grid-template-columns: 1fr;
+  }
+
+  .nec-secretariat-member-identity {
+    grid-column: auto;
+  }
+
+  .nec-secretariat-form-actions {
+    justify-content: stretch;
+  }
+
+  .nec-secretariat-form-actions button {
+    width: 100%;
+  }
+}

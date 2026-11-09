@@ -18,6 +18,7 @@ import {
   X,
   BriefcaseBusiness,
   FolderKanban,
+  Mail,
 } from "lucide-react";
 
 import { useAuth } from "../../../context/AuthContext";
@@ -48,7 +49,7 @@ const AdminSidebar = ({
       end: true,
     },
     {
-      label: "County Applications",
+      label: "President Applications",
       path: "/nec/applications",
       icon: FileText,
     },
@@ -57,9 +58,18 @@ const AdminSidebar = ({
       path: "/nec/associations",
       icon: Building2,
     },
+        ...(isSuperAdmin
+      ? [
+          {
+            label: "National Secretariat",
+            path: "/nec/secretariat",
+            icon: BriefcaseBusiness,
+          },
+        ]
+      : []),
     {
-      label: "Presidents & Members",
-      path: "/admin/users",
+      label: "Members",
+      path: "/admin/members",
       icon: Users,
     },
     {
@@ -69,9 +79,14 @@ const AdminSidebar = ({
     },
     {
       label: "Announcements",
-      path: "/admin/announcements",
+      path: "/admin/news",
       icon: Megaphone,
     },
+    {
+  label: "Contact Messages",
+  path: "/admin/contact",
+  icon: Mail,
+},
     {
       label: "Events & Programmes",
       path: "/admin/events",

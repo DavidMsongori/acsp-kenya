@@ -1,12 +1,22 @@
-
 import { Link } from "react-router-dom";
+
 import {
   ArrowUpRight,
   MapPin,
   Mail,
 } from "lucide-react";
 
+import {
+  FaInstagram,
+  FaFacebookF,
+  FaXTwitter,
+   FaYoutube,
+} from "react-icons/fa6";
+
+import logo from "../../assets/logo.png";
+
 import "./Footer.css";
+
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -19,13 +29,15 @@ const Footer = () => {
           {/* Organisation */}
           <div className="public-footer-about">
             <Link to="/" className="public-footer-brand">
-              <div className="public-footer-brand-mark">
-                ACSP
-              </div>
+              <img
+                src={logo}
+                alt="ACSP-Kenya Logo"
+                className="public-footer-logo"
+              />
 
               <div>
                 <strong>ACSP-KENYA</strong>
-                <span>Association of County Students Presidents</span>
+                <span>Diverse Voices · Common Goals · One Vision</span>
               </div>
             </Link>
 
@@ -37,9 +49,41 @@ const Footer = () => {
             </p>
 
             <div className="public-footer-socials">
-              <a href="#" aria-label="Facebook">f</a>
-              <a href="#" aria-label="Instagram">◎</a>
-              <a href="#" aria-label="X">𝕏</a>
+              <a
+                href="https://www.facebook.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+              >
+                <FaFacebookF size={17} />
+              </a>
+
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={19} />
+              </a>
+
+              <a
+                href="https://x.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+              >
+                <FaXTwitter size={18} />
+              </a>
+
+              <a
+                href="https://www.youtube.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube"
+              >
+                <FaYoutube size={20} />
+              </a>
             </div>
           </div>
 
@@ -99,7 +143,7 @@ const Footer = () => {
           </p>
 
           <p>
-            Advancing Student Leadership. Strengthening County Representation.
+            Diverse Voices · Common Goals · One Vision
           </p>
         </div>
       </div>

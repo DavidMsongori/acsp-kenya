@@ -3,17 +3,14 @@ import axios from "axios";
 import { supabase } from "../config/supabase";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000",
+  baseURL: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
   withCredentials: true,
   headers: {
     "Content-Type": "application/json",
   },
 });
 
-// ==========================================
 // Attach Supabase Access Token
-// ==========================================
-
 api.interceptors.request.use(
   async (config) => {
     const {
@@ -24,6 +21,8 @@ api.interceptors.request.use(
     if (error) {
       throw error;
     }
+
+    config.headers = config.headers || {};
 
     if (session?.access_token) {
       config.headers.Authorization = `Bearer ${session.access_token}`;

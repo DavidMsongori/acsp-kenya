@@ -26,21 +26,21 @@ router.get("/", getSecretariatDirectory);
 router.post(
   "/appointments",
   authenticateUser,
-  authorizeRoles("super_admin", "nec_admin"),
+  authorizeRoles("super_admin"),
   appointSecretariatMember
 );
 
 router.get(
   "/candidates",
   authenticateUser,
-  authorizeRoles("super_admin", "nec_admin"),
+  authorizeRoles("super_admin"),
   searchSecretariatCandidates
 );
 
 router.get(
   "/appointments",
   authenticateUser,
-  authorizeRoles("super_admin", "nec_admin"),
+  authorizeRoles("super_admin"),
   getSecretariatAppointments
 );
 

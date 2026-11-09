@@ -38,3 +38,32 @@ export const authenticateUser = async (req, res, next) => {
     });
   }
 };
+
+// OPTIONAL AUTHENTICATION
+// Allows public visitors while identifying logged-in users when a valid token exists.
+export const optionalAuthenticateUser = async (req, res, next) => {
+  try {
+    const authHeader = req.headers.authorization;
+
+    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+      req.user = null;
+      return next();
+    }
+
+    const token = authHeader.split(" ")[1];
+
+    const {
+      data: { user },
+      error,
+    } = await supabaseAdmin.auth.getUser(token);
+
+    req.user = error || !user ? null : user;
+
+    return next();
+  } catch (error) {
+    console.error("Optional authentication error:", error.message);
+
+    req.user = null;
+    return next();
+  }
+};

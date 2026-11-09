@@ -4,22 +4,61 @@ import cors from "cors";
 import dotenv from "dotenv";
 import morgan from "morgan";
 
+// ==========================================
+// ROUTE IMPORTS
+// ==========================================
+
+// County and application routes
 import countyRoutes from "./routes/county.routes.js";
-import uploadRoutes from "./routes/upload.routes.js";
 import applicationRoutes from "./routes/application.routes.js";
+import uploadRoutes from "./routes/upload.routes.js";
+
+// NEC and association routes
 import necRoutes from "./routes/nec.routes.js";
-import programmeRoutes from "./routes/programme.routes.js";
-import programmeAdminRoutes from "./routes/programme.admin.routes.js";
 import publicAssociationRoutes from "./routes/publicAssociation.routes.js";
+
+// Leadership routes
 import publicLeadershipRoutes from "./routes/publicLeadership.routes.js";
 import secretariatRoutes from "./routes/secretariat.routes.js";
+
+// Programmes routes
+import programmeRoutes from "./routes/programme.routes.js";
+import programmeAdminRoutes from "./routes/programme.admin.routes.js";
+
+// Membership routes
+import membershipRoutes from "./routes/membership.routes.js";
+import membershipAdminRoutes from "./routes/membership.admin.routes.js";
+
+// Events routes
+import eventRoutes from "./routes/event.routes.js";
+import eventAdminRoutes from "./routes/event.admin.routes.js";
+
+// Announcements routes
+import announcementRoutes from "./routes/announcement.routes.js";
+import announcementAdminRoutes from "./routes/announcement.admin.routes.js";
+
+// Contacts routes
+import contactRoutes from "./routes/contact.routes.js";
+import contactAdminRoutes from "./routes/contact.admin.routes.js";
+
+// Audit and logging routes
+import auditRoutes from "./routes/audit.admin.routes.js";
+
+// Administration routes
+import administratorAdminRoutes from "./routes/administrator.admin.routes.js";
+
+// Settings routes
+import settingsRoutes from "./routes/settings.admin.routes.js";
+
+// Profile routes
+import profileRoutes from "./routes/profile.admin.routes.js";
 
 dotenv.config();
 
 const app = express();
 
 // ==========================================
-// Middleware
+// MIDDLEWARE
 // ==========================================
 
 app.use(
@@ -37,32 +76,76 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 // ==========================================
-// API Routes
+// PUBLIC API ROUTES
 // ==========================================
 
+// County information
 app.use("/api/counties", countyRoutes);
-app.use("/api/uploads", uploadRoutes);
-app.use("/api/applications", applicationRoutes);
-app.use("/api/nec", necRoutes);
 
-// Public national programmes
+// File uploads
+app.use("/api/uploads", uploadRoutes);
+
+// Applications
+app.use("/api/applications", applicationRoutes);
+
+// Public announcements
+app.use("/api/announcements", announcementRoutes);
+
+// Public membership applications
+app.use("/api/membership", membershipRoutes);
+
+// Public contact messages
+app.use("/api/contact", contactRoutes);
+
+// Public programmes
 app.use("/api/programmes", programmeRoutes);
 
-// Public verified county associations
+// Public events
+app.use("/api/events", eventRoutes);
+
+// Public associations
 app.use("/api/associations", publicAssociationRoutes);
 
-// Public Leadership and General Assembly directory
+// Public leadership and secretariat directory
 app.use("/api/leadership", publicLeadershipRoutes);
-
-// Protected administrator programme management
-app.use("/api/admin/programmes", programmeAdminRoutes);
-
-// Protected secretariat management
-// National Secretariat directory
 app.use("/api/leadership/secretariat", secretariatRoutes);
 
 // ==========================================
-// Root Route
+// PROTECTED ADMINISTRATION ROUTES
+// ==========================================
+
+// National Executive Council
+app.use("/api/nec", necRoutes);
+
+// Membership management
+app.use("/api/admin/membership", membershipAdminRoutes);
+
+// Contact management
+app.use("/api/admin/contact", contactAdminRoutes);
+
+// Programme management
+app.use("/api/admin/programmes", programmeAdminRoutes);
+
+// Event management
+app.use("/api/admin/events", eventAdminRoutes);
+
+// Announcement management
+app.use("/api/admin/announcements", announcementAdminRoutes);
+
+// Audit and logging
+app.use("/api/admin/audit-logs", auditRoutes);
+
+// Administrator management
+app.use("/api/admin/administrators", administratorAdminRoutes);
+
+// Application settings
+app.use("/api/admin/settings", settingsRoutes);
+
+// Profile management
+app.use("/api/admin/profile", profileRoutes);
+
+// ==========================================
+// ROOT ROUTE
 // ==========================================
 
 app.get("/", (req, res) => {
@@ -73,7 +156,7 @@ app.get("/", (req, res) => {
 });
 
 // ==========================================
-// Health Check
+// HEALTH CHECK
 // ==========================================
 
 app.get("/api/health", (req, res) => {
@@ -86,7 +169,7 @@ app.get("/api/health", (req, res) => {
 });
 
 // ==========================================
-// 404 Handler
+// 404 HANDLER
 // ==========================================
 
 app.use((req, res) => {
@@ -97,7 +180,7 @@ app.use((req, res) => {
 });
 
 // ==========================================
-// Start Server
+// START SERVER
 // ==========================================
 
 const PORT = process.env.PORT || 5000;
