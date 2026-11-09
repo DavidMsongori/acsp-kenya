@@ -72,9 +72,9 @@ function WhereWeWork() {
   programmesResponse,
   associationsResponse,
 ] = await Promise.all([
-  api.get("/api/counties"),
-  api.get("/api/programmes"),
-  api.get("/api/associations"),
+  api.get("/counties"),
+  api.get("/programmes"),
+  api.get("/associations"),
 ]);
 
 setCounties(countiesResponse.data.counties || []);

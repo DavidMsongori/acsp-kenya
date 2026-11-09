@@ -25,7 +25,7 @@ function ProgramsPage() {
         setLoading(true);
         setError("");
 
-        const response = await api.get("/api/programmes");
+        const response = await api.get("/programmes");
 
         setProgrammes(response.data.programmes || []);
       } catch (err) {
