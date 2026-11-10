@@ -1,0 +1,347 @@
+
+/* =========================================
+   JOIN PAGE
+========================================= */
+
+.join-page {
+  width: 100%;
+  overflow: hidden;
+  background: #ffffff;
+  color: #263445;
+}
+
+.join-container {
+  width: min(1120px, 92%);
+  margin: 0 auto;
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.join-hero {
+  padding: 65px 0 70px;
+  background: #032f5e;
+  color: #ffffff;
+  text-align: center;
+}
+
+.join-eyebrow {
+  display: inline-flex;
+  padding: 8px 18px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(226, 205, 23, 0.65);
+  border-radius: 5px;
+  background: rgba(226, 205, 23, 0.12);
+  color: #e2cd17;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.join-hero h1 {
+  max-width: 850px;
+  margin: 0 auto 17px;
+  color: #ffffff;
+  font-size: clamp(32px, 4.2vw, 48px);
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.join-hero h1 span {
+  display: block;
+  color: #e2cd17;
+}
+
+.join-hero p {
+  max-width: 730px;
+  margin: 0 auto;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CHOICE SECTION
+========================================= */
+
+.join-choices-section {
+  padding: 65px 0 75px;
+  background: #f5f8fc;
+}
+
+.join-section-heading {
+  max-width: 750px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+
+.join-section-heading > span {
+  display: inline-block;
+  margin-bottom: 12px;
+  color: #9a8700;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.join-section-heading h2 {
+  margin: 0 0 13px;
+  color: #032f5e;
+  font-size: clamp(25px, 3vw, 34px);
+  line-height: 1.25;
+  font-weight: 800;
+}
+
+.join-section-heading p {
+  margin: 0;
+  color: #647386;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   CHOICE CARDS
+========================================= */
+
+.join-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  align-items: stretch;
+}
+
+.join-choice-card {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 30px;
+  border: 1px solid #e1e8f0;
+  border-top: 5px solid #032f5e;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(3, 47, 94, 0.055);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.join-choice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 30px rgba(3, 47, 94, 0.1);
+}
+
+.student-choice {
+  border-top-color: #e2cd17;
+}
+
+.join-choice-icon {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  background: #edf3fa;
+  color: #032f5e;
+}
+
+.student-choice .join-choice-icon {
+  background: #fff9d9;
+}
+
+.join-choice-label {
+  margin-bottom: 10px;
+  color: #9a8700;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+}
+
+.join-choice-card h3 {
+  margin: 0 0 13px;
+  color: #032f5e;
+  font-size: 23px;
+  line-height: 1.3;
+  font-weight: 800;
+}
+
+.join-choice-description {
+  min-height: 105px;
+  margin: 0 0 20px;
+  color: #647386;
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+.join-choice-card ul {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 0;
+  margin: 0 0 27px;
+  list-style: none;
+}
+
+.join-choice-card li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #405167;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.join-choice-card li svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: #b39c00;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.join-choice-button {
+  width: 100%;
+  min-height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: auto;
+  padding: 13px 18px;
+  border: 1px solid #032f5e;
+  border-radius: 6px;
+  background: #032f5e;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  transition: all 0.25s ease;
+}
+
+.join-choice-button:hover {
+  border-color: #e2cd17;
+  background: #e2cd17;
+  color: #032f5e;
+}
+
+.student-choice .join-choice-button {
+  border-color: #c6ad00;
+  background: #e2cd17;
+  color: #032f5e;
+}
+
+.student-choice .join-choice-button:hover {
+  border-color: #032f5e;
+  background: #032f5e;
+  color: #ffffff;
+}
+
+/* =========================================
+   HELP NOTE
+========================================= */
+
+.join-help {
+  max-width: 850px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin: 35px auto 0;
+  padding: 19px 22px;
+  border: 1px solid #e3eaf2;
+  border-left: 4px solid #e2cd17;
+  border-radius: 7px;
+  background: #ffffff;
+}
+
+.join-help-icon {
+  flex-shrink: 0;
+  color: #032f5e;
+}
+
+.join-help p {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin: 0;
+  color: #647386;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.join-help strong {
+  color: #032f5e;
+  font-size: 14px;
+}
+
+/* =========================================
+   RESPONSIVENESS
+========================================= */
+
+@media (max-width: 800px) {
+  .join-choice-grid {
+    gap: 17px;
+  }
+
+  .join-choice-card {
+    padding: 25px 22px;
+  }
+
+  .join-choice-description {
+    min-height: 125px;
+  }
+}
+
+@media (max-width: 650px) {
+  .join-hero {
+    padding: 48px 0 52px;
+  }
+
+  .join-hero h1 {
+    font-size: 31px;
+  }
+
+  .join-hero p {
+    font-size: 14px;
+  }
+
+  .join-choices-section {
+    padding: 43px 0 50px;
+  }
+
+  .join-section-heading {
+    margin-bottom: 27px;
+  }
+
+  .join-choice-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .join-choice-card {
+    padding: 25px 21px;
+  }
+
+  .join-choice-card h3 {
+    font-size: 21px;
+  }
+
+  .join-choice-description {
+    min-height: auto;
+  }
+
+  .join-help {
+    margin-top: 25px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .join-hero h1 {
+    font-size: 27px;
+  }
+
+  .join-choice-card {
+    padding: 21px 17px;
+  }
+}

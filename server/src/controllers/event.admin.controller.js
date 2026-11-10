@@ -1,3 +1,4 @@
+
 import { supabaseAdmin } from "../config/supabase.js";
 
 // GET ALL EVENTS FOR ADMINISTRATION
@@ -38,9 +39,12 @@ export const createEvent = async (req, res) => {
       capacity,
       featuredImage,
       audience,
+      category,
+      county,
+      registrationUrl,
     } = req.body;
 
-    if (!title || !eventDate) {
+    if (!title?.trim() || !eventDate) {
       return res.status(400).json({
         success: false,
         message: "Event title and event date are required.",
@@ -66,6 +70,9 @@ export const createEvent = async (req, res) => {
       capacity: capacity ? Number(capacity) : null,
       featured_image: featuredImage || null,
       audience: audience || "public",
+      category: category?.trim() || "other",
+      county: county?.trim() || null,
+      registration_url: registrationUrl?.trim() || null,
       publication_status: "draft",
       status: "upcoming",
       registration_open: true,
@@ -111,6 +118,9 @@ export const updateEvent = async (req, res) => {
       featuredImage,
       audience,
       registrationOpen,
+      category,
+      county,
+      registrationUrl,
     } = req.body;
 
     const allowedAudiences = ["public", "members_only", "both"];
@@ -124,23 +134,45 @@ export const updateEvent = async (req, res) => {
 
     const updates = {};
 
-    if (title !== undefined) updates.title = title.trim();
+    if (title !== undefined) {
+      if (!title.trim()) {
+        return res.status(400).json({
+          success: false,
+          message: "Event title cannot be empty.",
+        });
+      }
+
+      updates.title = title.trim();
+    }
+
     if (description !== undefined) updates.description = description;
     if (venue !== undefined) updates.venue = venue;
     if (eventDate !== undefined) updates.event_date = eventDate;
-    if (eventEndDate !== undefined) updates.event_end_date = eventEndDate;
+    if (eventEndDate !== undefined) {
+      updates.event_end_date = eventEndDate || null;
+    }
     if (registrationDeadline !== undefined) {
-      updates.registration_deadline = registrationDeadline;
+      updates.registration_deadline = registrationDeadline || null;
     }
     if (capacity !== undefined) {
-      updates.capacity = capacity === "" || capacity === null
-        ? null
-        : Number(capacity);
+      updates.capacity =
+        capacity === "" || capacity === null ? null : Number(capacity);
     }
-    if (featuredImage !== undefined) updates.featured_image = featuredImage;
+    if (featuredImage !== undefined) {
+      updates.featured_image = featuredImage;
+    }
     if (audience !== undefined) updates.audience = audience;
     if (registrationOpen !== undefined) {
       updates.registration_open = Boolean(registrationOpen);
+    }
+    if (category !== undefined) {
+      updates.category = category.trim() || "other";
+    }
+    if (county !== undefined) {
+      updates.county = county.trim() || null;
+    }
+    if (registrationUrl !== undefined) {
+      updates.registration_url = registrationUrl.trim() || null;
     }
 
     if (Object.keys(updates).length === 0) {
@@ -212,9 +244,10 @@ export const updateEventPublicationStatus = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      message: publicationStatus === "published"
-        ? "Event published successfully."
-        : "Event unpublished successfully.",
+      message:
+        publicationStatus === "published"
+          ? "Event published successfully."
+          : "Event unpublished successfully.",
       event: data,
     });
   } catch (error) {
@@ -227,7 +260,7 @@ export const updateEventPublicationStatus = async (req, res) => {
   }
 };
 
-// UPDATE EVENT STATUS (UPCOMING, COMPLETED OR CANCELLED)
+// UPDATE EVENT STATUS
 export const updateEventStatus = async (req, res) => {
   try {
     const { id } = req.params;

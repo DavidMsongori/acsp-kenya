@@ -106,7 +106,7 @@ const Navbar = () => {
 
         {/* Desktop Actions */}
         <div className="public-nav-actions">
-          <Link to="/register" className="public-join-button">
+          <Link to="/join" className="public-join-button">
             Join Us
           </Link>
 
@@ -180,7 +180,7 @@ const Navbar = () => {
             ))}
 
             <Link
-              to="/register"
+              to="/join"
               className="public-mobile-link public-mobile-join"
               onClick={closeMenu}
             >

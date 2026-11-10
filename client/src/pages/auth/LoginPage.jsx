@@ -31,8 +31,8 @@ const LoginPage = () => {
     }));
   };
 
-  // Determine the user's dashboard based on their role.
-  const getDashboardPath = (roles) => {
+  // Determine the user's destination based on role and account type.
+  const getDashboardPath = (roles, accountType) => {
     if (roles.includes("super_admin")) {
       return "/nec";
     }
@@ -43,6 +43,14 @@ const LoginPage = () => {
 
     if (roles.includes("county_president")) {
       return "/dashboard";
+    }
+
+    if (roles.includes("individual_member")) {
+      return "/individual/dashboard";
+    }
+
+    if (accountType === "individual_student") {
+      return "/individual/application";
     }
 
     return "/dashboard";
@@ -75,8 +83,15 @@ const LoginPage = () => {
       // Fetch the user's assigned roles.
       const roles = await getUserRoles(userId);
 
-      // Redirect according to role priority.
-      const destination = getDashboardPath(roles);
+      // Identify the account type from Supabase metadata.
+      const accountType =
+        loginData.user?.user_metadata?.account_type;
+
+      // Redirect according to role priority and account type.
+      const destination = getDashboardPath(
+        roles,
+        accountType
+      );
 
       toast.success("Login successful!");
 
@@ -98,7 +113,8 @@ const LoginPage = () => {
 
           <p>
             Sign in to access your ACSP-Kenya account and
-            continue your County Association President application.
+            continue your membership or County Association
+            President application.
           </p>
         </div>
 
@@ -169,7 +185,13 @@ const LoginPage = () => {
 
         <div className="auth-footer">
           Don't have an account?{" "}
-          <Link to="/register">Apply as County President</Link>
+          <Link to="/register">
+            Apply as County President
+          </Link>
+          {" or "}
+          <Link to="/individual/register">
+            Register as an Individual Student
+          </Link>
         </div>
 
       </div>

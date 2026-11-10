@@ -265,3 +265,334 @@
     padding: 15px;
   }
 }
+
+
+/* ==========================================
+   MEMBERSHIP APPLICATION ACTIONS
+========================================== */
+
+.members-row-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.members-row-actions button,
+.members-modal-footer button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 35px;
+  padding: 8px 11px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.members-approve-btn {
+  background: #0b6845;
+  color: #fff;
+  border-color: #0b6845 !important;
+}
+
+.members-approve-btn:hover {
+  background: #075536;
+}
+
+.members-reject-btn {
+  background: #fff;
+  color: #b42318;
+  border-color: #fecaca !important;
+}
+
+.members-reject-btn:hover {
+  background: #fef2f2;
+}
+
+.members-under-review-btn {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-color: #bfdbfe !important;
+}
+
+.members-under-review-btn:hover {
+  background: #dbeafe;
+}
+
+.members-cancel-btn {
+  background: #f1f5f9;
+  color: #475569;
+  border-color: #e2e8f0 !important;
+}
+
+.members-row-actions button:disabled,
+.members-modal-footer button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ==========================================
+   APPLICATION PREVIEW MODAL
+========================================== */
+
+.members-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.65);
+  overflow-y: auto;
+}
+
+.members-preview-modal {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 850px;
+  max-height: 92vh;
+  background: #fff;
+  border-radius: 13px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.members-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 24px;
+  border-bottom: 1px solid #e5eaf0;
+}
+
+.members-modal-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #0b6845;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.7px;
+}
+
+.members-modal-header h2 {
+  margin: 10px 0 6px;
+  color: #032f5e;
+  font-size: 22px;
+}
+
+.members-modal-header p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.members-modal-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid #e2e8f0;
+  border-radius: 7px;
+  background: #fff;
+  color: #475569;
+  cursor: pointer;
+}
+
+.members-modal-close:hover {
+  background: #f1f5f9;
+}
+
+.members-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.members-preview-status {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.members-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.members-detail-section h3,
+.members-review-section h3 {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin: 0;
+  padding-bottom: 11px;
+  border-bottom: 1px solid #edf1f5;
+  color: #032f5e;
+  font-size: 15px;
+}
+
+.members-detail-section h3 svg {
+  color: #0b6845;
+}
+
+.members-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.members-detail-grid div {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.members-detail-grid span {
+  color: #94a3b8;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.members-detail-grid strong {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.members-application-notes {
+  margin: 0;
+  padding: 14px;
+  border: 1px solid #e5eaf0;
+  border-radius: 8px;
+  background: #f8fafc;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.members-review-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid #dbeafe;
+  border-radius: 9px;
+  background: #f8fbff;
+}
+
+.members-review-section label {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.members-review-section textarea {
+  width: 100%;
+  min-height: 105px;
+  padding: 12px;
+  border: 1px solid #dbe3ed;
+  border-radius: 7px;
+  outline: none;
+  resize: vertical;
+  background: #fff;
+  color: #24364b;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.members-review-section textarea:focus {
+  border-color: #0b6845;
+  box-shadow: 0 0 0 3px rgba(11, 104, 69, 0.08);
+}
+
+.members-review-section small {
+  align-self: flex-end;
+  color: #94a3b8;
+  font-size: 11px;
+}
+
+.members-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 18px 24px;
+  border-top: 1px solid #e5eaf0;
+  background: #fff;
+}
+
+.members-final-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* ==========================================
+   RESPONSIVE MODAL
+========================================== */
+
+@media (max-width: 650px) {
+  .members-modal-overlay {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .members-preview-modal {
+    max-height: calc(100vh - 20px);
+  }
+
+  .members-modal-header,
+  .members-modal-body {
+    padding: 17px;
+  }
+
+  .members-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .members-modal-footer {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    padding: 15px 17px;
+  }
+
+  .members-modal-footer button {
+    width: 100%;
+    min-height: 42px;
+  }
+
+  .members-row-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .members-row-actions button {
+    justify-content: center;
+  }
+}

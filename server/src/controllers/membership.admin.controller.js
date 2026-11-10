@@ -27,6 +27,7 @@ export const getMembershipApplications = async (req, res) => {
       .select(`
         id,
         profile_id,
+        application_type,
         membership_number,
         membership_category,
         institution_name,

@@ -3,8 +3,13 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
 
+import PresidentDashboardLayout from "../../components/layouts/president/PresidentDashboardLayout";
+
 import api from "../../services/api";
-import { submitApplication } from "../../services/application.service";
+import {
+  submitApplication,
+  getMyApplication,
+} from "../../services/application.service";
 
 import "./ApplicationPage.css";
 
@@ -30,6 +35,9 @@ const ApplicationPage = () => {
 
   const [loadingCounties, setLoadingCounties] = useState(true);
   const [submitting, setSubmitting] = useState(false);
+
+  const [application, setApplication] = useState(null);
+  const [loadingApplication, setLoadingApplication] = useState(true);
   
 
   // ==========================================
@@ -55,6 +63,44 @@ const ApplicationPage = () => {
 
     fetchCounties();
   }, []);
+
+  // ==========================================
+// Load Existing Application
+// ==========================================
+
+useEffect(() => {
+  const fetchApplication = async () => {
+    try {
+      const response = await getMyApplication();
+
+      setApplication(
+        response.hasApplication ? response.application : null
+      );
+    } catch (error) {
+      console.error("Application status loading error:", error);
+      toast.error("Unable to load your application status.");
+    } finally {
+      setLoadingApplication(false);
+    }
+  };
+
+  fetchApplication();
+}, []);
+
+
+const association = application?.county_associations;
+
+const isAssociationApproved =
+  application?.application_status === "approved" &&
+  association?.verification_status === "verified";
+
+const getApplicationStatus = () => {
+  if (!application) return "Not Submitted";
+
+  return application.application_status
+    ?.replaceAll("_", " ")
+    ?.replace(/\b\w/g, (char) => char.toUpperCase()) || "Pending";
+};
 
   // ==========================================
   // Handle Form Changes
@@ -193,7 +239,103 @@ const ApplicationPage = () => {
     }
   };
 
+  // ==========================================
+// Existing Application Status
+// ==========================================
+
+if (loadingApplication) {
   return (
+    <PresidentDashboardLayout
+      title="My Application"
+      subtitle="Track your County Association application."
+    >
+      <div className="application-container">
+        <p>Loading your application status...</p>
+      </div>
+    </PresidentDashboardLayout>
+  );
+}
+
+if (application) {
+  return (
+    <PresidentDashboardLayout
+      title="My Application"
+      subtitle="Track your County Association application."
+    >
+      <div className="application-container">
+        <header className="application-header">
+          <h1>County President Application</h1>
+          <p>Your application has already been submitted.</p>
+        </header>
+
+        <section className="application-section application-status-card">
+          <h2>Application Status</h2>
+
+          <p>
+  <strong>Status:</strong>{" "}
+  <span className="application-status-badge">
+    {getApplicationStatus()}
+  </span>
+</p>
+
+          <p>
+            <strong>Association:</strong>{" "}
+            {association?.association_name || "Not available"}
+          </p>
+
+          <p>
+            <strong>County:</strong>{" "}
+            {association?.counties?.name || "Not available"}
+          </p>
+
+          <p>
+  <strong>Association Verification:</strong>{" "}
+  <span className="verification-status-badge">
+    {association?.verification_status
+      ?.replaceAll("_", " ")
+      ?.replace(/\b\w/g, (char) => char.toUpperCase()) ||
+      "Pending"}
+  </span>
+</p>
+
+          {application.review_notes && (
+            <div>
+              <h3>Review Notes</h3>
+              <p>{application.review_notes}</p>
+            </div>
+          )}
+
+          {isAssociationApproved && (
+            <p>
+              Your application has been approved and your
+              County Association has been verified. You can
+              now access your association services.
+            </p>
+          )}
+
+          <p>
+            <strong>Submitted:</strong>{" "}
+            {application.created_at
+              ? new Date(application.created_at).toLocaleDateString()
+              : "Not available"}
+          </p>
+        </section>
+
+        <div className="application-actions">
+          <Link to="/dashboard" className="cancel-button">
+            Back to Dashboard
+          </Link>
+        </div>
+      </div>
+    </PresidentDashboardLayout>
+  );
+}
+
+  return (
+  <PresidentDashboardLayout
+    title="My Application"
+    subtitle="Submit your County Association application."
+  >
     <main className="application-page">
       <div className="application-container">
         <header className="application-header">
@@ -501,6 +643,7 @@ const ApplicationPage = () => {
         </form>
       </div>
     </main>
+  </PresidentDashboardLayout> 
   );
 };
 

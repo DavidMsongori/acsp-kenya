@@ -8,7 +8,6 @@ import {
   FileText,
   Building2,
   Users,
-  ClipboardList,
   CalendarDays,
   Megaphone,
   Settings,
@@ -23,6 +22,8 @@ import "./PresidentSidebar.css";
 const PresidentSidebar = ({
   mobileOpen = false,
   onClose,
+  applicationLoading = true,
+  isAssociationApproved = false,
 }) => {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
@@ -64,42 +65,44 @@ const PresidentSidebar = ({
       icon: LayoutDashboard,
       end: true,
     },
-    {
-      label: "My Application",
-      path: "/application",
-      icon: FileText,
-    },
+    ...(
+      applicationLoading || !isAssociationApproved
+        ? [
+            {
+              label: "My Application",
+              path: "/application",
+              icon: FileText,
+            },
+          ]
+        : []
+    ),
     {
       label: "My County Association",
       path: "/association",
       icon: Building2,
     },
-    {
-      label: "Association Members",
-      path: "/association/members",
-      icon: Users,
-    },
-    {
-      label: "Reports",
-      path: "/association/reports",
-      icon: ClipboardList,
-    },
-    {
-      label: "Programmes & Activities",
-      path: "/association/programmes",
-      icon: CalendarDays,
-    },
+    ...(
+      !applicationLoading && isAssociationApproved
+        ? [
+            {
+              label: "Association Members",
+              path: "/association/members",
+              icon: Users,
+            },
+          ]
+        : []
+    ),
   ];
 
   const communicationNavigation = [
     {
       label: "Announcements",
-      path: "/announcements",
+      path: "/association/announcements",
       icon: Megaphone,
     },
     {
       label: "Events",
-      path: "/events",
+      path: "/association/events",
       icon: CalendarDays,
     },
   ];
@@ -222,7 +225,7 @@ const PresidentSidebar = ({
 
         <div className="president-sidebar-bottom">
           <NavLink
-            to="/account"
+            to="/association/profile"
             onClick={closeSidebar}
             className={({ isActive }) =>
               `president-sidebar-link ${

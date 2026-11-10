@@ -1,9 +1,11 @@
 
 .application-page {
-  min-height: 100vh;
-  padding: 45px 20px 70px;
-  background: #f3f6fb;
+  width: 100%;
+  min-height: auto;
+  padding: 10px 0 30px;
+  background: transparent;
   font-family: Inter, Arial, sans-serif;
+  box-sizing: border-box;
 }
 
 .application-container {
@@ -231,8 +233,8 @@
 
 @media (max-width: 650px) {
   .application-page {
-    padding: 25px 14px 45px;
-  }
+  padding: 10px 0 25px;
+}
 
   .application-header h1 {
     font-size: 25px;
@@ -265,4 +267,35 @@
     width: 100%;
     box-sizing: border-box;
   }
+}
+
+/* Application Status Card */
+.application-status-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.application-status-card > p {
+  margin: 0;
+  color: #52647b;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.application-status-card > p strong {
+  color: #263b55;
+}
+
+.application-status-badge,
+.verification-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 11px;
+  border-radius: 999px;
+  background: #eaf1fa;
+  color: #174f89;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
 }

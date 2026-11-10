@@ -53,6 +53,12 @@ import settingsRoutes from "./routes/settings.admin.routes.js";
 // Profile routes
 import profileRoutes from "./routes/profile.admin.routes.js";
 
+// Association - Membership routes
+import associationMembersRoutes from "./routes/association.members.routes.js";
+
+// Association Profile routes
+import associationProfileRoutes from "./routes/profile.association.routes.js";
+
 dotenv.config();
 
 const app = express();
@@ -116,6 +122,12 @@ app.use("/api/leadership/secretariat", secretariatRoutes);
 
 // National Executive Council
 app.use("/api/nec", necRoutes);
+
+// County Association members
+app.use("/api/association", associationMembersRoutes);
+
+// County Association profile
+app.use("/api/association/profile", associationProfileRoutes);
 
 // Membership management
 app.use("/api/admin/membership", membershipAdminRoutes);

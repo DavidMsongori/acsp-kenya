@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import {
   CalendarDays,
@@ -18,14 +19,19 @@ import toast from "react-hot-toast";
 
 import api from "../../services/api";
 import AdminDashboardLayout from "../../components/layouts/admin/AdminDashboardLayout";
+import EventForm from "./EventForm";
 
 import "./EventsManagementPage.css";
 
 const EventsManagementPage = () => {
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("all");
+
+  const [showForm, setShowForm] = useState(false);
+  const [selectedEvent, setSelectedEvent] = useState(null);
 
   const fetchEvents = async () => {
     try {
@@ -49,11 +55,68 @@ const EventsManagementPage = () => {
     fetchEvents();
   }, []);
 
+  const openCreateForm = () => {
+    setSelectedEvent(null);
+    setShowForm(true);
+  };
+
+  const openEditForm = (event) => {
+    setSelectedEvent(event);
+    setShowForm(true);
+  };
+
+  const closeForm = () => {
+    if (saving) return;
+
+    setShowForm(false);
+    setSelectedEvent(null);
+  };
+
+  const handleSaveEvent = async (form) => {
+    try {
+      setSaving(true);
+
+      const payload = {
+        ...form,
+        eventDate: new Date(form.eventDate).toISOString(),
+        eventEndDate: form.eventEndDate
+          ? new Date(form.eventEndDate).toISOString()
+          : null,
+        registrationDeadline: form.registrationDeadline
+          ? new Date(form.registrationDeadline).toISOString()
+          : null,
+        capacity: form.capacity === "" ? null : Number(form.capacity),
+      };
+
+      if (selectedEvent) {
+        await api.patch(`/admin/events/${selectedEvent.id}`, payload);
+        toast.success("Event updated successfully.");
+      } else {
+        await api.post("/admin/events", payload);
+        toast.success("Event created successfully as a draft.");
+      }
+
+      setShowForm(false);
+      setSelectedEvent(null);
+
+      await fetchEvents();
+    } catch (error) {
+      console.error("Save event error:", error);
+
+      toast.error(
+        error.response?.data?.message || "Unable to save event."
+      );
+    } finally {
+      setSaving(false);
+    }
+  };
+
   const filteredEvents = events.filter((event) => {
     const searchText = [
       event.title,
       event.venue,
       event.description,
+      event.county,
     ]
       .filter(Boolean)
       .join(" ")
@@ -75,6 +138,7 @@ const EventsManagementPage = () => {
     return new Date(date).toLocaleString("en-KE", {
       dateStyle: "medium",
       timeStyle: "short",
+      timeZone: "Africa/Nairobi",
     });
   };
 
@@ -83,6 +147,99 @@ const EventsManagementPage = () => {
     if (audience === "both") return "Public & Members";
     return "Public";
   };
+
+  const handleDelete = async (event) => {
+    const confirmed = window.confirm(
+      `Are you sure you want to delete "${event.title}"? This action may be blocked if registrations already exist.`
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await api.delete(`/admin/events/${event.id}`);
+
+      toast.success("Event deleted successfully.");
+      await fetchEvents();
+    } catch (error) {
+      console.error("Delete event error:", error);
+
+      toast.error(
+        error.response?.data?.message ||
+          "Unable to delete event. Check whether registrations are linked to it."
+      );
+    }
+  };
+
+  
+  const handleTogglePublication = async (event) => {
+    const isPublished = event.publication_status === "published";
+
+    const confirmed = window.confirm(
+      isPublished
+        ? `Unpublish "${event.title}" and return it to drafts?`
+        : `Publish "${event.title}" on the public website?`
+    );
+
+    if (!confirmed) return;
+
+    try {
+      await api.patch(`/admin/events/${event.id}/publication`, {
+        publicationStatus: isPublished ? "draft" : "published",
+      });
+
+      toast.success(
+        isPublished
+          ? "Event unpublished successfully."
+          : "Event published successfully."
+      );
+
+      await fetchEvents();
+    } catch (error) {
+      console.error("Update event publication error:", error);
+
+      toast.error(
+        error.response?.data?.message ||
+          "Unable to update event publication status."
+      );
+    }
+  };
+
+  
+  const handleChangeEventStatus = async (event, newStatus) => {
+    if (newStatus === event.status) return;
+
+    if (
+      newStatus === "cancelled" &&
+      !window.confirm(
+        `Are you sure you want to cancel "${event.title}"? Registrations will be closed.`
+      )
+    ) {
+      return;
+    }
+
+    try {
+      await api.patch(`/admin/events/${event.id}/status`, {
+        status: newStatus,
+      });
+
+      toast.success(
+        `Event status updated to ${newStatus}.`
+      );
+
+      await fetchEvents();
+    } catch (error) {
+      console.error("Update event status error:", error);
+
+      toast.error(
+        error.response?.data?.message ||
+          "Unable to update event status."
+      );
+
+      await fetchEvents();
+    }
+  };
+
+
 
   return (
     <AdminDashboardLayout
@@ -171,7 +328,7 @@ const EventsManagementPage = () => {
           <button
             type="button"
             className="events-create-btn"
-            onClick={() => toast("Event creation form will be added next.")}
+            onClick={openCreateForm}
           >
             <Plus size={17} />
             Create Event
@@ -205,11 +362,17 @@ const EventsManagementPage = () => {
                   <tr key={event.id}>
                     <td>
                       <strong>{event.title}</strong>
+                      {event.category && (
+                        <small>{event.category.replaceAll("_", " ")}</small>
+                      )}
                     </td>
 
                     <td>
                       <span>{formatDate(event.event_date)}</span>
-                      <small>{event.venue || "Venue not specified"}</small>
+                      <small>
+                        {event.venue || "Venue not specified"}
+                        {event.county ? ` · ${event.county}` : ""}
+                      </small>
                     </td>
 
                     <td>
@@ -231,22 +394,32 @@ const EventsManagementPage = () => {
                       </span>
                     </td>
 
-                    <td>
-                      <span
-                        className={`events-status-badge ${event.status}`}
-                      >
-                        {event.status}
-                      </span>
-                    </td>
+                    
+  <td>
+    <select
+      className="event-status-select"
+      value={event.status || "upcoming"}
+      onChange={(e) =>
+        handleChangeEventStatus(event, e.target.value)
+      }
+    >
+      <option value="upcoming">Upcoming</option>
+      <option value="completed">Completed</option>
+      <option value="cancelled">Cancelled</option>
+    </select>
+  </td>
+
 
                     <td>
                       <div className="events-action-buttons">
                         <button
                           type="button"
                           title="View"
-                          onClick={() =>
-                            toast("Event details will be added next.")
-                          }
+                          onClick={() => {
+                            window.alert(
+                              `${event.title}\n\n${event.description || "No description provided."}\n\nVenue: ${event.venue || "Not specified"}\nDate: ${formatDate(event.event_date)}`
+                            );
+                          }}
                         >
                           <Eye size={16} />
                         </button>
@@ -254,19 +427,34 @@ const EventsManagementPage = () => {
                         <button
                           type="button"
                           title="Edit"
-                          onClick={() =>
-                            toast("Event editing will be added next.")
-                          }
+                          onClick={() => openEditForm(event)}
                         >
                           <Pencil size={16} />
                         </button>
 
+
+                        
+  <button
+    type="button"
+    title={
+      event.publication_status === "published"
+        ? "Unpublish"
+        : "Publish"
+    }
+    onClick={() => handleTogglePublication(event)}
+  >
+    {event.publication_status === "published" ? (
+      <Clock size={16} />
+    ) : (
+      <Globe size={16} />
+    )}
+  </button>
+
+
                         <button
                           type="button"
                           title="Delete"
-                          onClick={() =>
-                            toast("Event deletion will be added next.")
-                          }
+                          onClick={() => handleDelete(event)}
                         >
                           <Trash2 size={16} />
                         </button>
@@ -278,6 +466,15 @@ const EventsManagementPage = () => {
             </table>
           )}
         </div>
+
+        {showForm && (
+          <EventForm
+            event={selectedEvent}
+            onClose={closeForm}
+            onSubmit={handleSaveEvent}
+            saving={saving}
+          />
+        )}
       </div>
     </AdminDashboardLayout>
   );

@@ -1,0 +1,458 @@
+
+.association-account-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #172b4d;
+}
+
+.association-account-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.association-account-eyebrow {
+  color: #b18b00;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.association-account-header h1 {
+  margin: 7px 0;
+  color: #102a56;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.association-account-header p,
+.association-account-section-heading p {
+  margin: 0;
+  color: #718096;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.association-account-refresh,
+.association-account-reset,
+.association-account-save {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 42px;
+  padding: 0 17px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.association-account-refresh {
+  border: 1px solid #dce3ed;
+  background: #fff;
+  color: #102a56;
+}
+
+.association-account-refresh:hover {
+  background: #f3f6fb;
+}
+
+.association-account-grid {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.association-account-card {
+  padding: 25px;
+  border: 1px solid #e5eaf1;
+  border-radius: 13px;
+  background: #fff;
+  box-shadow: 0 3px 14px rgba(16, 42, 86, 0.045);
+}
+
+.association-account-summary {
+  text-align: center;
+}
+
+.association-account-avatar {
+  width: 105px;
+  height: 105px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #edf2f8;
+  color: #102a56;
+  border: 4px solid #f5c518;
+}
+
+.association-account-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.association-account-summary h2 {
+  margin: 0 0 7px;
+  color: #102a56;
+  font-size: 19px;
+  font-weight: 800;
+}
+
+.association-account-summary > p {
+  margin: 0;
+  color: #718096;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.association-account-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 15px;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fff8d9;
+  color: #806400;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.association-account-summary-divider {
+  height: 1px;
+  margin: 22px 0;
+  background: #edf0f4;
+}
+
+.association-account-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  text-align: left;
+}
+
+.association-account-meta > div,
+.association-account-detail {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.association-account-meta svg,
+.association-account-detail > svg {
+  flex-shrink: 0;
+  color: #b18b00;
+  margin-top: 2px;
+}
+
+.association-account-meta span,
+.association-account-detail span {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  min-width: 0;
+}
+
+.association-account-meta small,
+.association-account-detail small,
+.association-account-statuses small {
+  color: #8290a3;
+  font-size: 11px;
+}
+
+.association-account-meta strong,
+.association-account-detail strong {
+  color: #243b5a;
+  font-size: 12px;
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.association-account-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.association-account-section-heading h2 {
+  margin: 0 0 6px;
+  color: #102a56;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.association-account-section-heading > svg {
+  color: #b18b00;
+  flex-shrink: 0;
+}
+
+.association-account-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 19px;
+}
+
+.association-account-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.association-account-field.full-width {
+  grid-column: 1 / -1;
+}
+
+.association-account-field label {
+  color: #34445c;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.association-account-input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 45px;
+  padding: 0 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color 0.2s ease;
+}
+
+.association-account-input:focus-within {
+  border-color: #102a56;
+}
+
+.association-account-input svg {
+  flex-shrink: 0;
+  color: #8492a6;
+}
+
+.association-account-input input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #243b5a;
+  font-size: 13px;
+}
+
+.association-account-input.disabled {
+  background: #f4f6f9;
+}
+
+.association-account-input input:disabled {
+  color: #7b8798;
+  cursor: not-allowed;
+}
+
+.association-account-field textarea {
+  width: 100%;
+  min-height: 115px;
+  padding: 12px;
+  border: 1px solid #dce3ed;
+  border-radius: 8px;
+  outline: none;
+  resize: vertical;
+  color: #243b5a;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+.association-account-field textarea:focus {
+  border-color: #102a56;
+}
+
+.association-account-field > small {
+  color: #8793a5;
+  font-size: 10px;
+}
+
+.association-account-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 19px;
+  border-top: 1px solid #edf0f4;
+}
+
+.association-account-reset {
+  border: 1px solid #dce3ed;
+  background: #fff;
+  color: #52627a;
+}
+
+.association-account-reset:hover {
+  background: #f4f6f9;
+}
+
+.association-account-save {
+  border: 1px solid #102a56;
+  background: #102a56;
+  color: #fff;
+}
+
+.association-account-save:hover {
+  border-color: #1b407a;
+  background: #1b407a;
+}
+
+.association-account-save:disabled,
+.association-account-refresh:disabled,
+.association-account-reset:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.association-account-official {
+  margin-top: 2px;
+}
+
+.association-account-statuses {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.association-account-statuses > div {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  padding: 16px;
+  border: 1px solid #edf0f4;
+  border-radius: 9px;
+  background: #fafbfd;
+}
+
+.association-account-status {
+  color: #102a56;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.association-account-official-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px 30px;
+}
+
+.association-account-review-notes {
+  margin-top: 25px;
+  padding: 16px;
+  border-left: 4px solid #f5c518;
+  border-radius: 6px;
+  background: #fffbeb;
+}
+
+.association-account-review-notes strong {
+  color: #102a56;
+  font-size: 12px;
+}
+
+.association-account-review-notes p {
+  margin: 8px 0 0;
+  color: #59677c;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.association-account-empty,
+.association-account-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 45px 20px;
+  color: #8492a6;
+  text-align: center;
+}
+
+.association-account-empty h3 {
+  margin: 12px 0 5px;
+  color: #102a56;
+}
+
+.association-account-empty p {
+  max-width: 420px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.association-account-loading {
+  min-height: 300px;
+  gap: 12px;
+}
+
+.association-account-loading p {
+  font-size: 13px;
+}
+
+.spin {
+  animation: association-account-spin 1s linear infinite;
+}
+
+@keyframes association-account-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .association-account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .association-account-summary {
+    max-width: none;
+  }
+
+  .association-account-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .association-account-card {
+    padding: 18px;
+  }
+
+  .association-account-header h1 {
+    font-size: 23px;
+  }
+
+  .association-account-form-grid,
+  .association-account-statuses,
+  .association-account-official-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .association-account-meta {
+    grid-template-columns: 1fr;
+  }
+
+  .association-account-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .association-account-form-actions button {
+    width: 100%;
+  }
+}

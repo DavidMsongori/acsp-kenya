@@ -16,11 +16,20 @@ import LeadershipPage from "./pages/public/LeadershipPage";
 import EventsPage from "./pages/public/EventsPage";
 import NewsPage from "./pages/public/NewsPage";
 import ContactPage from "./pages/public/ContactPage";
+import TimelinePage from "./pages/public/TimelinePage";
+import JoinPage from "./pages/public/JoinPage.jsx";
 
 import RegisterPage from "./pages/auth/RegisterPage";
 import LoginPage from "./pages/auth/LoginPage";
+import IndividualRegisterPage from "./pages/auth/IndividualRegisterPage";
+
 
 import DashboardPage from "./pages/dashboard/DashboardPage";
+import AssociationPage from "./pages/association/AssociationPage";
+import AssociationMembersPage from "./pages/association/AssociationMembersPage";
+import AssociationAnnouncementsPage from "./pages/association/AssociationAnnouncementsPage";
+import AssociationEventsPage from "./pages/association/AssociationEventsPage";
+import AssociationAccountPage from "./pages/association/AssociationAccountPage";
 import NecDashboardPage from "./pages/dashboard/NecDashboardPage";
 import WorkstationDashboardPage from "./pages/dashboard/WorkstationDashboardPage";
 import ProgrammesDashboardPage from "./pages/dashboard/ProgrammesDashboardPage";
@@ -33,16 +42,11 @@ import AdministratorManagementPage from "./pages/dashboard/AdministratorsManagem
 import SystemSettingsPage from "./pages/dashboard/SystemSettingsPage";
 import AdminProfilePage from "./pages/dashboard/AdminProfilePage";
 
+import MemberDashboardPage from "./pages/member/MemberDashboardPage";
+import IndividualApplicationPage from "./pages/member/IndividualApplicationPage";
+
 import ApplicationPage from "./pages/application/ApplicationPage";
 
-function PublicPlaceholderPage({ title }) {
-  return (
-    <main>
-      <h1>{title}</h1>
-      <p>This section is currently being developed.</p>
-    </main>
-  );
-}
 
 function NotFoundPage() {
   return (
@@ -70,24 +74,52 @@ function App() {
         <Route path="/events" element={<EventsPage />} />
         <Route path="/news" element={<NewsPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/timeline" element={<TimelinePage />} />
+        <Route path="/join" element={<JoinPage />} /> 
 
         </Route>
 
 
-        <Route
-          path="/timeline"
-          element={<PublicPlaceholderPage title="Our Timeline" />}
-        />
 
       {/* AUTHENTICATION */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
+      <Route path="/individual/register" element={<IndividualRegisterPage />} />
+    
+<Route
+  element={<ProtectedRoute />}
+>
+  <Route path="/individual/application" element={<IndividualApplicationPage />}/>
+</Route>
+
 
       {/* COUNTY PRESIDENT DASHBOARD */}
-      <Route element={<ProtectedRoute />}>
-        <Route path="/dashboard" element={<DashboardPage />} />
-        <Route path="/application" element={<ApplicationPage />} />
-      </Route>
+<Route
+  element={
+    <ProtectedRoute allowedRoles={["county_president"]} />
+  }
+>
+  <Route path="/dashboard" element={<DashboardPage />} />
+  <Route path="/application" element={<ApplicationPage />} />
+  <Route path="/association" element={<AssociationPage />} />
+  <Route path="/association/members" element={<AssociationMembersPage />} />
+  <Route path="/association/announcements" element={<AssociationAnnouncementsPage />} />
+  <Route path="/association/events" element={<AssociationEventsPage />} />
+  <Route path="/association/profile" element={<AssociationAccountPage />} />
+</Route>
+
+            {/* INDIVIDUAL STUDENT MEMBER DASHBOARD */}
+      <Route
+        element={
+          <ProtectedRoute
+            allowedRoles={["individual_member"]}
+            redirectTo="/individual/application"
+          />
+        }
+      >
+        <Route path="/individual/dashboard" element={<MemberDashboardPage />} />
+
+      </Route> 
 
       {/* NEC AND ADMIN DASHBOARDS */}
       <Route

@@ -1,0 +1,252 @@
+
+.individual-application-page {
+  min-height: 100vh;
+  padding: 45px 20px;
+  background: #f4f8f5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.individual-application-card {
+  width: 100%;
+  max-width: 720px;
+  padding: 38px;
+  background: #ffffff;
+  border: 1px solid #e6eee8;
+  border-radius: 14px;
+  box-shadow: 0 8px 30px rgba(20, 60, 40, 0.06);
+}
+
+.individual-application-header {
+  text-align: center;
+}
+
+.individual-application-icon {
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 18px;
+  border-radius: 16px;
+  background: #e8f3eb;
+  color: #17613c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.individual-application-header > span {
+  color: #26734b;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1px;
+}
+
+.individual-application-header h1 {
+  margin: 12px 0;
+  color: #173b2c;
+  font-size: 25px;
+  line-height: 1.35;
+}
+
+.individual-application-header p {
+  max-width: 550px;
+  margin: 0 auto;
+  color: #718078;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.individual-free-membership {
+  margin: 27px 0;
+  padding: 17px 19px;
+  border: 1px solid #cde7d4;
+  border-radius: 9px;
+  background: #f0f8f2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.individual-free-membership strong {
+  color: #17613c;
+  font-size: 13px;
+}
+
+.individual-free-membership span {
+  color: #60756a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.individual-applicant-details {
+  margin-bottom: 25px;
+  padding: 18px;
+  border-radius: 9px;
+  background: #f7f9f7;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px 15px;
+}
+
+.individual-applicant-details span {
+  color: #829087;
+  font-size: 11px;
+}
+
+.individual-applicant-details strong {
+  color: #284a37;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.individual-form-group {
+  margin-bottom: 20px;
+}
+
+.individual-form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #30473a;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.individual-form-group input,
+.individual-form-group textarea {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid #dce6df;
+  border-radius: 8px;
+  outline: none;
+  background: #ffffff;
+  color: #263b30;
+  font: inherit;
+  font-size: 13px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.individual-form-group input:focus,
+.individual-form-group textarea:focus {
+  border-color: #26734b;
+  box-shadow: 0 0 0 3px rgba(38, 115, 75, 0.1);
+}
+
+.individual-form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.individual-application-card form button,
+.individual-application-card > button,
+.individual-application-loading button {
+  min-height: 48px;
+  padding: 0 22px;
+  border: none;
+  border-radius: 8px;
+  background: #17613c;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.individual-application-card form button {
+  width: 100%;
+}
+
+.individual-application-card form button:hover,
+.individual-application-card > button:hover,
+.individual-application-loading button:hover {
+  background: #10472c;
+}
+
+.individual-application-card form button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.individual-application-footer {
+  margin: 19px 0 0;
+  color: #87938b;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.individual-existing-application {
+  margin: 25px 0;
+  padding: 18px;
+  border: 1px solid #e4ece6;
+  border-radius: 9px;
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.individual-existing-application > div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.individual-existing-application span {
+  color: #829087;
+  font-size: 11px;
+}
+
+.individual-existing-application strong {
+  color: #294b38;
+  font-size: 13px;
+  overflow-wrap: anywhere;
+}
+
+.individual-application-notice {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 8px;
+  background: #f0f6f1;
+  color: #315a40;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.individual-application-loading {
+  width: 100%;
+  max-width: 550px;
+  padding: 45px 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  text-align: center;
+  color: #52685a;
+}
+
+.individual-spin {
+  animation: individual-spin 1s linear infinite;
+  color: #17613c;
+}
+
+@keyframes individual-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .individual-application-page {
+    padding: 20px 12px;
+  }
+
+  .individual-application-card {
+    padding: 25px 18px;
+  }
+
+  .individual-application-header h1 {
+    font-size: 21px;
+  }
+
+  .individual-applicant-details {
+    grid-template-columns: 1fr;
+    gap: 7px;
+  }
+}

@@ -5,11 +5,13 @@ import { supabase } from "../config/supabase";
 // Register Applicant
 // ==========================================
 
+
 export const registerUser = async ({
   fullName,
   email,
   phone,
   password,
+  accountType = "county_president",
 }) => {
   const { data, error } = await supabase.auth.signUp({
     email: email.trim().toLowerCase(),
@@ -18,6 +20,7 @@ export const registerUser = async ({
       data: {
         full_name: fullName.trim(),
         phone: phone.trim(),
+        account_type: accountType,
       },
     },
   });
@@ -34,6 +37,7 @@ export const registerUser = async ({
 
   return data;
 };
+
 
 // ==========================================
 // Login

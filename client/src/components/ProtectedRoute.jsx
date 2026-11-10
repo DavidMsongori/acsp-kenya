@@ -2,7 +2,10 @@
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
-const ProtectedRoute = ({ allowedRoles = [] }) => {
+const ProtectedRoute = ({
+  allowedRoles = [],
+  redirectTo = "/dashboard",
+}) => {
   const {
     isAuthenticated,
     loading,
@@ -22,12 +25,12 @@ const ProtectedRoute = ({ allowedRoles = [] }) => {
     return <Navigate to="/login" replace />;
   }
 
-  // Enforce role restrictions only when specified.
+  // Enforce role restrictions.
   if (
     allowedRoles.length > 0 &&
     !hasRole(...allowedRoles)
   ) {
-    return <Navigate to="/dashboard" replace />;
+    return <Navigate to={redirectTo} replace />;
   }
 
   return <Outlet />;
